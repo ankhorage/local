@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.1.0",
+      "value": "v0.2.0",
       "color": "cb3837"
     },
     {
@@ -96,7 +96,7 @@
       "path": "src/features/local-compute/application/ensureLocalComputeAsync.ts",
       "isEntrypoint": false,
       "dependencies": [
-        "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+        "src/features/local-compute/application/inspectLocalComputeSnapshotAsync.ts",
         "src/types/localCompute.ts"
       ],
       "exports": ["ensureLocalComputeAsync"]
@@ -115,6 +115,15 @@
       "isEntrypoint": false,
       "dependencies": ["src/types/localCompute.ts"],
       "exports": ["InspectedLocalCompute", "inspectLocalComputeAsync"]
+    },
+    {
+      "path": "src/features/local-compute/application/inspectLocalComputeSnapshotAsync.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+        "src/types/localCompute.ts"
+      ],
+      "exports": ["inspectLocalComputeSnapshotAsync"]
     },
     {
       "path": "src/features/local-compute/application/planLocalComputeAsync.ts",
@@ -143,6 +152,7 @@
         "src/features/local-compute/application/destroyLocalComputeAsync.ts",
         "src/features/local-compute/application/ensureLocalComputeAsync.ts",
         "src/features/local-compute/application/getLocalComputeStatusAsync.ts",
+        "src/features/local-compute/application/inspectLocalComputeSnapshotAsync.ts",
         "src/features/local-compute/application/planLocalComputeAsync.ts",
         "src/features/local-compute/application/validateLocalComputeAsync.ts",
         "src/types/localCompute.ts"
@@ -185,7 +195,7 @@
       "modulePath": "src/features/local-compute/composition/createInfraAdapter.ts",
       "sourceLocation": {
         "filePath": "src/features/local-compute/composition/createInfraAdapter.ts",
-        "line": 20,
+        "line": 21,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
@@ -417,7 +427,7 @@
       "description": "Return the validated current host as a portable compute target without provisioning it.",
       "sourceLocation": {
         "filePath": "src/features/local-compute/application/ensureLocalComputeAsync.ts",
-        "line": 13,
+        "line": 12,
         "column": 1
       }
     },
@@ -458,6 +468,15 @@
       }
     },
     {
+      "name": "inspectLocalComputeSnapshotAsync",
+      "description": "Return the existing local host as a read-only portable compute snapshot.",
+      "sourceLocation": {
+        "filePath": "src/features/local-compute/application/inspectLocalComputeSnapshotAsync.ts",
+        "line": 12,
+        "column": 1
+      }
+    },
+    {
       "name": "planLocalComputeAsync",
       "description": "Report the existing local host as a no-op compute target.",
       "sourceLocation": {
@@ -480,7 +499,7 @@
       "description": "Create the canonical local-host compute adapter entrypoint.\n\nThe default adapter inspects the current Node host and never provisions, suspends or deletes the\nuser's machine. A probe can be injected for deterministic tests or another host environment.",
       "sourceLocation": {
         "filePath": "src/features/local-compute/composition/createInfraAdapter.ts",
-        "line": 20,
+        "line": 21,
         "column": 1
       }
     },
@@ -489,7 +508,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/infraAdapter.test.ts",
-        "line": 83,
+        "line": 88,
         "column": 1
       }
     },
@@ -498,7 +517,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/infraAdapter.test.ts",
-        "line": 102,
+        "line": 107,
         "column": 1
       }
     }
@@ -565,7 +584,7 @@
       },
       {
         "fromPath": "src/features/local-compute/application/ensureLocalComputeAsync.ts",
-        "toPath": "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+        "toPath": "src/features/local-compute/application/inspectLocalComputeSnapshotAsync.ts",
         "sourcePath": "src/features/local-compute/application/ensureLocalComputeAsync.ts"
       },
       {
@@ -582,6 +601,16 @@
         "fromPath": "src/features/local-compute/application/inspectLocalComputeAsync.ts",
         "toPath": "src/types/localCompute.ts",
         "sourcePath": "src/features/local-compute/application/inspectLocalComputeAsync.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/application/inspectLocalComputeSnapshotAsync.ts",
+        "toPath": "src/types/localCompute.ts",
+        "sourcePath": "src/features/local-compute/application/inspectLocalComputeSnapshotAsync.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/application/inspectLocalComputeSnapshotAsync.ts",
+        "toPath": "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+        "sourcePath": "src/features/local-compute/application/inspectLocalComputeSnapshotAsync.ts"
       },
       {
         "fromPath": "src/features/local-compute/application/planLocalComputeAsync.ts",
@@ -631,6 +660,11 @@
       {
         "fromPath": "src/features/local-compute/composition/createInfraAdapter.ts",
         "toPath": "src/features/local-compute/application/getLocalComputeStatusAsync.ts",
+        "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/composition/createInfraAdapter.ts",
+        "toPath": "src/features/local-compute/application/inspectLocalComputeSnapshotAsync.ts",
         "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
       },
       {
@@ -700,8 +734,8 @@
       },
       {
         "fromSymbol": "ensureLocalComputeAsync",
-        "toSymbol": "inspectLocalComputeAsync",
-        "callExpression": "inspectLocalComputeAsync",
+        "toSymbol": "inspectLocalComputeSnapshotAsync",
+        "callExpression": "inspectLocalComputeSnapshotAsync",
         "sourcePath": "src/features/local-compute/application/ensureLocalComputeAsync.ts"
       },
       {
@@ -729,6 +763,12 @@
         "sourcePath": "src/features/local-compute/application/inspectLocalComputeAsync.ts"
       },
       {
+        "fromSymbol": "inspectLocalComputeSnapshotAsync",
+        "toSymbol": "inspectLocalComputeAsync",
+        "callExpression": "inspectLocalComputeAsync",
+        "sourcePath": "src/features/local-compute/application/inspectLocalComputeSnapshotAsync.ts"
+      },
+      {
         "fromSymbol": "planLocalComputeAsync",
         "toSymbol": "inspectLocalComputeAsync",
         "callExpression": "inspectLocalComputeAsync",
@@ -750,6 +790,12 @@
         "fromSymbol": "validateAsync",
         "toSymbol": "validateLocalComputeAsync",
         "callExpression": "validateLocalComputeAsync",
+        "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
+      },
+      {
+        "fromSymbol": "inspectAsync",
+        "toSymbol": "inspectLocalComputeSnapshotAsync",
+        "callExpression": "inspectLocalComputeSnapshotAsync",
         "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
       },
       {

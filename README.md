@@ -3,7 +3,7 @@
 
 # @ankhorage/local
 
-![license: MIT](././paradox/badges/license.svg) ![npm: v0.1.0](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![docs: paradox](././paradox/badges/docs.svg)
+![license: MIT](././paradox/badges/license.svg) ![npm: v0.2.0](././paradox/badges/npm.svg) ![runtime: bun](././paradox/badges/runtime.svg) ![typescript: strict](././paradox/badges/typescript.svg) ![eslint: checked](././paradox/badges/eslint.svg) ![prettier: checked](././paradox/badges/prettier.svg) ![build: checked](././paradox/badges/build.svg) ![tests: checked](././paradox/badges/tests.svg) ![docs: paradox](././paradox/badges/docs.svg)
 
 Local-host compute adapter for provider-neutral Ankhorage infrastructure.
 
@@ -34,7 +34,7 @@ The default adapter inspects the current Node host and never provisions, suspend
 user's machine. A probe can be injected for deterministic tests or another host environment.
 
 Module: `src/features/local-compute/composition/createInfraAdapter.ts`
-Source: `src/features/local-compute/composition/createInfraAdapter.ts:20:1`
+Source: `src/features/local-compute/composition/createInfraAdapter.ts:21:1`
 Related symbols: `LocalComputeAdapterOptions`
 
 </details>

@@ -4,7 +4,7 @@
 
 Kind: `function`
 Module: `src/features/local-compute/composition/createInfraAdapter.ts`
-Source: `src/features/local-compute/composition/createInfraAdapter.ts:20:1`
+Source: `src/features/local-compute/composition/createInfraAdapter.ts:21:1`
 
 Create the canonical local-host compute adapter entrypoint.
 

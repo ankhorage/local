@@ -1,31 +1,18 @@
 import type {
   InfraComputeSelection,
-  InfraComputeTarget,
+  InfraComputeSnapshot,
   InfraExecutionContext,
-  InfraReconcileResult,
   InfraResult,
 } from '@ankhorage/contracts/infra';
 
 import type { LocalHostProbe } from '../../../types/localCompute';
-import { inspectLocalComputeAsync } from './inspectLocalComputeAsync';
+import { inspectLocalComputeSnapshotAsync } from './inspectLocalComputeSnapshotAsync';
 
 /*** Return the validated current host as a portable compute target without provisioning it. */
 export async function ensureLocalComputeAsync(
   probe: LocalHostProbe,
   context: InfraExecutionContext,
   selection: InfraComputeSelection<'local'>,
-): Promise<InfraResult<InfraReconcileResult & { readonly targets: readonly [ReturnTypeTarget] }>> {
-  const inspected = await inspectLocalComputeAsync(probe, context, selection);
-  if (!inspected.ok) return inspected;
-  return {
-    ok: true,
-    value: {
-      resources: [inspected.value.owner],
-      outputs: [],
-      targets: [inspected.value.observation.target],
-    },
-    diagnostics: [],
-  };
+): Promise<InfraResult<InfraComputeSnapshot>> {
+  return inspectLocalComputeSnapshotAsync(probe, context, selection);
 }
-
-type ReturnTypeTarget = Extract<InfraComputeTarget, { readonly kind: 'local-host' }>;

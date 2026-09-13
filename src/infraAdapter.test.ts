@@ -33,6 +33,11 @@ describe('local-host compute adapter', () => {
     };
     const adapter = createInfraAdapter({ probe: new FakeLocalHostProbe(target) });
     const context = createContext();
+    const inspected = await adapter.inspectAsync(context, {
+      provider: 'local',
+      workingDirectory: '/work',
+    });
+    expect(inspected.ok && inspected.value.targets).toEqual([target]);
     const plan = await adapter.planAsync(context, { provider: 'local', workingDirectory: '/work' });
     expect(plan.ok && plan.value[0]?.operation).toBe('noop');
     const ensured = await adapter.ensureAsync(context, {
