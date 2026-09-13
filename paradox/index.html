@@ -199,9 +199,85 @@
               <button
                 class="nav-button"
                 type="button"
+                data-target="src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts"
+              >
+                src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts
+                <small>4 functions</small>
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-button"
+                type="button"
+                data-target="src/features/local-compute/application/destroyLocalComputeAsync.ts"
+              >
+                src/features/local-compute/application/destroyLocalComputeAsync.ts
+                <small>1 function</small>
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-button"
+                type="button"
+                data-target="src/features/local-compute/application/ensureLocalComputeAsync.ts"
+              >
+                src/features/local-compute/application/ensureLocalComputeAsync.ts
+                <small>1 function</small>
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-button"
+                type="button"
+                data-target="src/features/local-compute/application/getLocalComputeStatusAsync.ts"
+              >
+                src/features/local-compute/application/getLocalComputeStatusAsync.ts
+                <small>2 functions</small>
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-button"
+                type="button"
+                data-target="src/features/local-compute/application/inspectLocalComputeAsync.ts"
+              >
+                src/features/local-compute/application/inspectLocalComputeAsync.ts
+                <small>2 functions</small>
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-button"
+                type="button"
+                data-target="src/features/local-compute/application/planLocalComputeAsync.ts"
+              >
+                src/features/local-compute/application/planLocalComputeAsync.ts
+                <small>1 function</small>
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-button"
+                type="button"
+                data-target="src/features/local-compute/application/validateLocalComputeAsync.ts"
+              >
+                src/features/local-compute/application/validateLocalComputeAsync.ts
+                <small>1 function</small>
+              </button>
+            </li>
+            <li>
+              <button
+                class="nav-button"
+                type="button"
                 data-target="src/features/local-compute/composition/createInfraAdapter.ts"
               >
                 src/features/local-compute/composition/createInfraAdapter.ts
+                <small>1 function</small>
+              </button>
+            </li>
+            <li>
+              <button class="nav-button" type="button" data-target="src/infraAdapter.test.ts">
+                src/infraAdapter.test.ts
                 <small>2 functions</small>
               </button>
             </li>
@@ -213,9 +289,9 @@
           <section class="panel">
             <h2>Package overview</h2>
             <div class="summary">
-              <div><strong>2</strong><span class="muted">public exports</span></div>
+              <div><strong>6</strong><span class="muted">public exports</span></div>
               <div><strong>0</strong><span class="muted">components</span></div>
-              <div><strong>5</strong><span class="muted">modules</span></div>
+              <div><strong>13</strong><span class="muted">modules</span></div>
               <div><strong>1</strong><span class="muted">entrypoints</span></div>
             </div>
             <h3>Entrypoints</h3>
@@ -240,30 +316,141 @@
             </article>
             <article
               class="item"
-              data-search="src/features/local-compute/composition/createInfraAdapter.ts src/constants/infra.ts createInfraAdapter"
+              data-search="src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts src/types/localCompute.ts createNodeLocalHostProbe"
+            >
+              <h3>src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p><strong>Dependencies:</strong> <code>src/types/localCompute.ts</code></p>
+              <p><strong>Exports:</strong> <code>createNodeLocalHostProbe</code></p>
+            </article>
+            <article
+              class="item"
+              data-search="src/features/local-compute/application/destroyLocalComputeAsync.ts destroyLocalComputeAsync"
+            >
+              <h3>src/features/local-compute/application/destroyLocalComputeAsync.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+              <p><strong>Exports:</strong> <code>destroyLocalComputeAsync</code></p>
+            </article>
+            <article
+              class="item"
+              data-search="src/features/local-compute/application/ensureLocalComputeAsync.ts src/features/local-compute/application/inspectLocalComputeAsync.ts src/types/localCompute.ts ensureLocalComputeAsync"
+            >
+              <h3>src/features/local-compute/application/ensureLocalComputeAsync.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p>
+                <strong>Dependencies:</strong>
+                <code>src/features/local-compute/application/inspectLocalComputeAsync.ts</code>,
+                <code>src/types/localCompute.ts</code>
+              </p>
+              <p><strong>Exports:</strong> <code>ensureLocalComputeAsync</code></p>
+            </article>
+            <article
+              class="item"
+              data-search="src/features/local-compute/application/getLocalComputeStatusAsync.ts src/features/local-compute/application/inspectLocalComputeAsync.ts src/types/localCompute.ts getLocalComputeStatusAsync"
+            >
+              <h3>src/features/local-compute/application/getLocalComputeStatusAsync.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p>
+                <strong>Dependencies:</strong>
+                <code>src/features/local-compute/application/inspectLocalComputeAsync.ts</code>,
+                <code>src/types/localCompute.ts</code>
+              </p>
+              <p><strong>Exports:</strong> <code>getLocalComputeStatusAsync</code></p>
+            </article>
+            <article
+              class="item"
+              data-search="src/features/local-compute/application/inspectLocalComputeAsync.ts src/types/localCompute.ts InspectedLocalCompute inspectLocalComputeAsync"
+            >
+              <h3>src/features/local-compute/application/inspectLocalComputeAsync.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p><strong>Dependencies:</strong> <code>src/types/localCompute.ts</code></p>
+              <p>
+                <strong>Exports:</strong> <code>InspectedLocalCompute</code>,
+                <code>inspectLocalComputeAsync</code>
+              </p>
+            </article>
+            <article
+              class="item"
+              data-search="src/features/local-compute/application/planLocalComputeAsync.ts src/features/local-compute/application/inspectLocalComputeAsync.ts src/types/localCompute.ts planLocalComputeAsync"
+            >
+              <h3>src/features/local-compute/application/planLocalComputeAsync.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p>
+                <strong>Dependencies:</strong>
+                <code>src/features/local-compute/application/inspectLocalComputeAsync.ts</code>,
+                <code>src/types/localCompute.ts</code>
+              </p>
+              <p><strong>Exports:</strong> <code>planLocalComputeAsync</code></p>
+            </article>
+            <article
+              class="item"
+              data-search="src/features/local-compute/application/validateLocalComputeAsync.ts src/features/local-compute/application/inspectLocalComputeAsync.ts src/types/localCompute.ts validateLocalComputeAsync"
+            >
+              <h3>src/features/local-compute/application/validateLocalComputeAsync.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p>
+                <strong>Dependencies:</strong>
+                <code>src/features/local-compute/application/inspectLocalComputeAsync.ts</code>,
+                <code>src/types/localCompute.ts</code>
+              </p>
+              <p><strong>Exports:</strong> <code>validateLocalComputeAsync</code></p>
+            </article>
+            <article
+              class="item"
+              data-search="src/features/local-compute/composition/createInfraAdapter.ts src/constants/infra.ts src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts src/features/local-compute/application/destroyLocalComputeAsync.ts src/features/local-compute/application/ensureLocalComputeAsync.ts src/features/local-compute/application/getLocalComputeStatusAsync.ts src/features/local-compute/application/planLocalComputeAsync.ts src/features/local-compute/application/validateLocalComputeAsync.ts src/types/localCompute.ts createInfraAdapter"
             >
               <h3>src/features/local-compute/composition/createInfraAdapter.ts</h3>
               <p class="muted">Referenced module</p>
-              <p><strong>Dependencies:</strong> <code>src/constants/infra.ts</code></p>
+              <p>
+                <strong>Dependencies:</strong> <code>src/constants/infra.ts</code>,
+                <code>src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts</code
+                >, <code>src/features/local-compute/application/destroyLocalComputeAsync.ts</code>,
+                <code>src/features/local-compute/application/ensureLocalComputeAsync.ts</code>,
+                <code>src/features/local-compute/application/getLocalComputeStatusAsync.ts</code>,
+                <code>src/features/local-compute/application/planLocalComputeAsync.ts</code>,
+                <code>src/features/local-compute/application/validateLocalComputeAsync.ts</code>,
+                <code>src/types/localCompute.ts</code>
+              </p>
               <p><strong>Exports:</strong> <code>createInfraAdapter</code></p>
             </article>
             <article
               class="item"
-              data-search="src/index.ts createInfraAdapter infraAdapterDescriptor"
+              data-search="src/index.ts createInfraAdapter createNodeLocalHostProbe infraAdapterDescriptor LocalComputeAdapterOptions LocalHostObservation LocalHostProbe"
             >
               <h3>src/index.ts</h3>
               <p class="muted">Configured entrypoint</p>
               <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
               <p>
                 <strong>Exports:</strong> <code>createInfraAdapter</code>,
-                <code>infraAdapterDescriptor</code>
+                <code>createNodeLocalHostProbe</code>, <code>infraAdapterDescriptor</code>,
+                <code>LocalComputeAdapterOptions</code>, <code>LocalHostObservation</code>,
+                <code>LocalHostProbe</code>
               </p>
             </article>
-            <article class="item" data-search="src/infraAdapter.test.ts src/index.ts">
+            <article
+              class="item"
+              data-search="src/infraAdapter.test.ts src/index.ts src/types/localCompute.ts"
+            >
               <h3>src/infraAdapter.test.ts</h3>
               <p class="muted">Referenced module</p>
-              <p><strong>Dependencies:</strong> <code>src/index.ts</code></p>
+              <p>
+                <strong>Dependencies:</strong> <code>src/index.ts</code>,
+                <code>src/types/localCompute.ts</code>
+              </p>
               <p><strong>Exports:</strong> <span class="empty">None</span></p>
+            </article>
+            <article
+              class="item"
+              data-search="src/types/localCompute.ts LocalComputeAdapterOptions LocalHostObservation LocalHostProbe"
+            >
+              <h3>src/types/localCompute.ts</h3>
+              <p class="muted">Referenced module</p>
+              <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+              <p>
+                <strong>Exports:</strong> <code>LocalComputeAdapterOptions</code>,
+                <code>LocalHostObservation</code>, <code>LocalHostProbe</code>
+              </p>
             </article>
           </section>
           <section class="panel">
@@ -284,33 +471,245 @@
               </article>
             </section>
             <section>
+              <h3>src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts</h3>
+              <article
+                class="item"
+                id="symbol-createnodelocalhostprobe"
+                data-search="createNodeLocalHostProbe function src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts Create the concrete Node host probe used by the default local compute adapter. LocalHostProbe () =&gt; LocalHostProbe"
+              >
+                <h4>createNodeLocalHostProbe</h4>
+                <p class="muted">
+                  function •
+                  <code
+                    >src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts:10:1</code
+                  >
+                </p>
+                <p>
+                  Create the concrete Node host probe used by the default local compute adapter.
+                </p>
+                <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+                <div>
+                  <strong>Related symbols:</strong>
+                  <ul class="chips">
+                    <li class="chip">LocalHostProbe</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5>Signature</h5>
+                  <pre>() =&gt; LocalHostProbe</pre>
+
+                  <p><strong>Returns:</strong> <code>LocalHostProbe</code></p>
+                </div>
+              </article>
+            </section>
+            <section>
               <h3>src/features/local-compute/composition/createInfraAdapter.ts</h3>
               <article
                 class="item"
                 id="symbol-createinfraadapter"
-                data-search='createInfraAdapter function src/features/local-compute/composition/createInfraAdapter.ts Create the canonical local-host compute adapter entrypoint.&#10;&#10;The foundation exposes the released Contracts boundary and fails lifecycle calls explicitly&#10;until the provider implementation phase supplies its external adapters. () =&gt; InfraComputeAdapter&lt;"local"&gt;'
+                data-search='createInfraAdapter function src/features/local-compute/composition/createInfraAdapter.ts Create the canonical local-host compute adapter entrypoint.&#10;&#10;The default adapter inspects the current Node host and never provisions, suspends or deletes the&#10;user&#39;s machine. A probe can be injected for deterministic tests or another host environment. LocalComputeAdapterOptions (options?: LocalComputeAdapterOptions) =&gt; InfraComputeAdapter&lt;"local"&gt;'
               >
                 <h4>createInfraAdapter</h4>
                 <p class="muted">
                   function •
-                  <code>src/features/local-compute/composition/createInfraAdapter.ts:13:1</code>
+                  <code>src/features/local-compute/composition/createInfraAdapter.ts:20:1</code>
                 </p>
                 <p>
-                  Create the canonical local-host compute adapter entrypoint. The foundation exposes
-                  the released Contracts boundary and fails lifecycle calls explicitly until the
-                  provider implementation phase supplies its external adapters.
+                  Create the canonical local-host compute adapter entrypoint. The default adapter
+                  inspects the current Node host and never provisions, suspends or deletes the
+                  user&#39;s machine. A probe can be injected for deterministic tests or another
+                  host environment.
                 </p>
                 <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
-                <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
+                <div>
+                  <strong>Related symbols:</strong>
+                  <ul class="chips">
+                    <li class="chip">LocalComputeAdapterOptions</li>
+                  </ul>
+                </div>
                 <div>
                   <h5>Signature</h5>
-                  <pre>() =&gt; InfraComputeAdapter&lt;&quot;local&quot;&gt;</pre>
-
+                  <pre>
+(options?: LocalComputeAdapterOptions) =&gt; InfraComputeAdapter&lt;&quot;local&quot;&gt;</pre>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Parameter</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>options</code></td>
+                        <td><code>LocalComputeAdapterOptions</code></td>
+                        <td>no</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
                   <p>
                     <strong>Returns:</strong>
                     <code>InfraComputeAdapter&lt;&quot;local&quot;&gt;</code>
                   </p>
                 </div>
+              </article>
+            </section>
+            <section>
+              <h3>src/types/localCompute.ts</h3>
+              <article
+                class="item"
+                id="symbol-localcomputeadapteroptions"
+                data-search="LocalComputeAdapterOptions type src/types/localCompute.ts  LocalHostProbe"
+              >
+                <h4>LocalComputeAdapterOptions</h4>
+                <p class="muted">type • <code>src/types/localCompute.ts:19:1</code></p>
+
+                <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+                <div>
+                  <strong>Related symbols:</strong>
+                  <ul class="chips">
+                    <li class="chip">LocalHostProbe</li>
+                  </ul>
+                </div>
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Member</th>
+                      <th>Kind</th>
+                      <th>Type</th>
+                      <th>Required</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>probe</code></td>
+                      <td>property</td>
+                      <td><code>LocalHostProbe | undefined</code></td>
+                      <td>no</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </article>
+              <article
+                class="item"
+                id="symbol-localhostobservation"
+                data-search="LocalHostObservation type src/types/localCompute.ts "
+              >
+                <h4>LocalHostObservation</h4>
+                <p class="muted">type • <code>src/types/localCompute.ts:3:1</code></p>
+
+                <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+                <div><strong>Related symbols:</strong> <span class="empty">None</span></div>
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Member</th>
+                      <th>Kind</th>
+                      <th>Type</th>
+                      <th>Required</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>detail</code></td>
+                      <td>property</td>
+                      <td><code>string | undefined</code></td>
+                      <td>no</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><code>exists</code></td>
+                      <td>property</td>
+                      <td><code>boolean</code></td>
+                      <td>yes</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><code>readable</code></td>
+                      <td>property</td>
+                      <td><code>boolean</code></td>
+                      <td>yes</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><code>target</code></td>
+                      <td>property</td>
+                      <td>
+                        <code
+                          >{ readonly id: string; readonly os: &quot;linux&quot; |
+                          &quot;darwin&quot; | &quot;windows&quot;; readonly architecture:
+                          &quot;amd64&quot; | &quot;arm64&quot;; } &amp; { readonly kind:
+                          &quot;local-host&quot;; }</code
+                        >
+                      </td>
+                      <td>yes</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><code>workingDirectory</code></td>
+                      <td>property</td>
+                      <td><code>string</code></td>
+                      <td>yes</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><code>writable</code></td>
+                      <td>property</td>
+                      <td><code>boolean</code></td>
+                      <td>yes</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </article>
+              <article
+                class="item"
+                id="symbol-localhostprobe"
+                data-search="LocalHostProbe type src/types/localCompute.ts  LocalHostObservation"
+              >
+                <h4>LocalHostProbe</h4>
+                <p class="muted">type • <code>src/types/localCompute.ts:12:1</code></p>
+
+                <p><strong>Export paths:</strong> <code>src/index.ts</code></p>
+                <div>
+                  <strong>Related symbols:</strong>
+                  <ul class="chips">
+                    <li class="chip">LocalHostObservation</li>
+                  </ul>
+                </div>
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Member</th>
+                      <th>Kind</th>
+                      <th>Type</th>
+                      <th>Required</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>inspectAsync</code></td>
+                      <td>method</td>
+                      <td>
+                        <code
+                          >(workingDirectory: string, signal?: AbortSignal) =&gt;
+                          Promise&lt;InfraResult&lt;LocalHostObservation&gt;&gt;</code
+                        >
+                      </td>
+                      <td>yes</td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
               </article>
             </section>
           </section>
@@ -335,14 +734,72 @@
                 module_examples_basic_usage_index_ts --&gt; module_dist_index_d_ts
                 module_src_constants_infra_ts[&quot;src/constants/infra.ts&quot;]
                 package__ankhorage_local -.-&gt; module_src_constants_infra_ts
+                module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts[&quot;src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts&quot;]
+                package__ankhorage_local -.-&gt;
+                module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts
+                module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts
+                --&gt; module_src_types_localCompute_ts
+                module_src_features_local_compute_application_destroyLocalComputeAsync_ts[&quot;src/features/local-compute/application/destroyLocalComputeAsync.ts&quot;]
+                package__ankhorage_local -.-&gt;
+                module_src_features_local_compute_application_destroyLocalComputeAsync_ts
+                module_src_features_local_compute_application_ensureLocalComputeAsync_ts[&quot;src/features/local-compute/application/ensureLocalComputeAsync.ts&quot;]
+                package__ankhorage_local -.-&gt;
+                module_src_features_local_compute_application_ensureLocalComputeAsync_ts
+                module_src_features_local_compute_application_ensureLocalComputeAsync_ts --&gt;
+                module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+                module_src_features_local_compute_application_ensureLocalComputeAsync_ts --&gt;
+                module_src_types_localCompute_ts
+                module_src_features_local_compute_application_getLocalComputeStatusAsync_ts[&quot;src/features/local-compute/application/getLocalComputeStatusAsync.ts&quot;]
+                package__ankhorage_local -.-&gt;
+                module_src_features_local_compute_application_getLocalComputeStatusAsync_ts
+                module_src_features_local_compute_application_getLocalComputeStatusAsync_ts --&gt;
+                module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+                module_src_features_local_compute_application_getLocalComputeStatusAsync_ts --&gt;
+                module_src_types_localCompute_ts
+                module_src_features_local_compute_application_inspectLocalComputeAsync_ts[&quot;src/features/local-compute/application/inspectLocalComputeAsync.ts&quot;]
+                package__ankhorage_local -.-&gt;
+                module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+                module_src_features_local_compute_application_inspectLocalComputeAsync_ts --&gt;
+                module_src_types_localCompute_ts
+                module_src_features_local_compute_application_planLocalComputeAsync_ts[&quot;src/features/local-compute/application/planLocalComputeAsync.ts&quot;]
+                package__ankhorage_local -.-&gt;
+                module_src_features_local_compute_application_planLocalComputeAsync_ts
+                module_src_features_local_compute_application_planLocalComputeAsync_ts --&gt;
+                module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+                module_src_features_local_compute_application_planLocalComputeAsync_ts --&gt;
+                module_src_types_localCompute_ts
+                module_src_features_local_compute_application_validateLocalComputeAsync_ts[&quot;src/features/local-compute/application/validateLocalComputeAsync.ts&quot;]
+                package__ankhorage_local -.-&gt;
+                module_src_features_local_compute_application_validateLocalComputeAsync_ts
+                module_src_features_local_compute_application_validateLocalComputeAsync_ts --&gt;
+                module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+                module_src_features_local_compute_application_validateLocalComputeAsync_ts --&gt;
+                module_src_types_localCompute_ts
                 module_src_features_local_compute_composition_createInfraAdapter_ts[&quot;src/features/local-compute/composition/createInfraAdapter.ts&quot;]
                 package__ankhorage_local -.-&gt;
                 module_src_features_local_compute_composition_createInfraAdapter_ts
                 module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
-                module_src_constants_infra_ts module_src_index_ts[&quot;src/index.ts&quot;]
+                module_src_constants_infra_ts
+                module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
+                module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts
+                module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
+                module_src_features_local_compute_application_destroyLocalComputeAsync_ts
+                module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
+                module_src_features_local_compute_application_ensureLocalComputeAsync_ts
+                module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
+                module_src_features_local_compute_application_getLocalComputeStatusAsync_ts
+                module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
+                module_src_features_local_compute_application_planLocalComputeAsync_ts
+                module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
+                module_src_features_local_compute_application_validateLocalComputeAsync_ts
+                module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
+                module_src_types_localCompute_ts module_src_index_ts[&quot;src/index.ts&quot;]
                 module_src_infraAdapter_test_ts[&quot;src/infraAdapter.test.ts&quot;]
                 package__ankhorage_local -.-&gt; module_src_infraAdapter_test_ts
                 module_src_infraAdapter_test_ts --&gt; module_src_index_ts
+                module_src_infraAdapter_test_ts --&gt; module_src_types_localCompute_ts
+                module_src_types_localCompute_ts[&quot;src/types/localCompute.ts&quot;]
+                package__ankhorage_local -.-&gt; module_src_types_localCompute_ts
               </div>
               <details>
                 <summary>View Mermaid source</summary>
@@ -356,13 +813,47 @@ graph TD
   module_examples_basic_usage_index_ts --&gt; module_dist_index_d_ts
   module_src_constants_infra_ts[&quot;src/constants/infra.ts&quot;]
   package__ankhorage_local -.-&gt; module_src_constants_infra_ts
+  module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts[&quot;src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts&quot;]
+  package__ankhorage_local -.-&gt; module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts
+  module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts --&gt; module_src_types_localCompute_ts
+  module_src_features_local_compute_application_destroyLocalComputeAsync_ts[&quot;src/features/local-compute/application/destroyLocalComputeAsync.ts&quot;]
+  package__ankhorage_local -.-&gt; module_src_features_local_compute_application_destroyLocalComputeAsync_ts
+  module_src_features_local_compute_application_ensureLocalComputeAsync_ts[&quot;src/features/local-compute/application/ensureLocalComputeAsync.ts&quot;]
+  package__ankhorage_local -.-&gt; module_src_features_local_compute_application_ensureLocalComputeAsync_ts
+  module_src_features_local_compute_application_ensureLocalComputeAsync_ts --&gt; module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+  module_src_features_local_compute_application_ensureLocalComputeAsync_ts --&gt; module_src_types_localCompute_ts
+  module_src_features_local_compute_application_getLocalComputeStatusAsync_ts[&quot;src/features/local-compute/application/getLocalComputeStatusAsync.ts&quot;]
+  package__ankhorage_local -.-&gt; module_src_features_local_compute_application_getLocalComputeStatusAsync_ts
+  module_src_features_local_compute_application_getLocalComputeStatusAsync_ts --&gt; module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+  module_src_features_local_compute_application_getLocalComputeStatusAsync_ts --&gt; module_src_types_localCompute_ts
+  module_src_features_local_compute_application_inspectLocalComputeAsync_ts[&quot;src/features/local-compute/application/inspectLocalComputeAsync.ts&quot;]
+  package__ankhorage_local -.-&gt; module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+  module_src_features_local_compute_application_inspectLocalComputeAsync_ts --&gt; module_src_types_localCompute_ts
+  module_src_features_local_compute_application_planLocalComputeAsync_ts[&quot;src/features/local-compute/application/planLocalComputeAsync.ts&quot;]
+  package__ankhorage_local -.-&gt; module_src_features_local_compute_application_planLocalComputeAsync_ts
+  module_src_features_local_compute_application_planLocalComputeAsync_ts --&gt; module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+  module_src_features_local_compute_application_planLocalComputeAsync_ts --&gt; module_src_types_localCompute_ts
+  module_src_features_local_compute_application_validateLocalComputeAsync_ts[&quot;src/features/local-compute/application/validateLocalComputeAsync.ts&quot;]
+  package__ankhorage_local -.-&gt; module_src_features_local_compute_application_validateLocalComputeAsync_ts
+  module_src_features_local_compute_application_validateLocalComputeAsync_ts --&gt; module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+  module_src_features_local_compute_application_validateLocalComputeAsync_ts --&gt; module_src_types_localCompute_ts
   module_src_features_local_compute_composition_createInfraAdapter_ts[&quot;src/features/local-compute/composition/createInfraAdapter.ts&quot;]
   package__ankhorage_local -.-&gt; module_src_features_local_compute_composition_createInfraAdapter_ts
   module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_constants_infra_ts
+  module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts
+  module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_features_local_compute_application_destroyLocalComputeAsync_ts
+  module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_features_local_compute_application_ensureLocalComputeAsync_ts
+  module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_features_local_compute_application_getLocalComputeStatusAsync_ts
+  module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_features_local_compute_application_planLocalComputeAsync_ts
+  module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_features_local_compute_application_validateLocalComputeAsync_ts
+  module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_types_localCompute_ts
   module_src_index_ts[&quot;src/index.ts&quot;]
   module_src_infraAdapter_test_ts[&quot;src/infraAdapter.test.ts&quot;]
   package__ankhorage_local -.-&gt; module_src_infraAdapter_test_ts
   module_src_infraAdapter_test_ts --&gt; module_src_index_ts
+  module_src_infraAdapter_test_ts --&gt; module_src_types_localCompute_ts
+  module_src_types_localCompute_ts[&quot;src/types/localCompute.ts&quot;]
+  package__ankhorage_local -.-&gt; module_src_types_localCompute_ts
 </pre>
               </details>
             </article>
@@ -376,13 +867,56 @@ graph TD
                 graph LR
                 module_examples_basic_usage_index_ts[&quot;examples/basic-usage/index.ts&quot;]
                 module_src_constants_infra_ts[&quot;src/constants/infra.ts&quot;]
+                module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts[&quot;src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts&quot;]
+                module_src_features_local_compute_application_destroyLocalComputeAsync_ts[&quot;src/features/local-compute/application/destroyLocalComputeAsync.ts&quot;]
+                module_src_features_local_compute_application_ensureLocalComputeAsync_ts[&quot;src/features/local-compute/application/ensureLocalComputeAsync.ts&quot;]
+                module_src_features_local_compute_application_getLocalComputeStatusAsync_ts[&quot;src/features/local-compute/application/getLocalComputeStatusAsync.ts&quot;]
+                module_src_features_local_compute_application_inspectLocalComputeAsync_ts[&quot;src/features/local-compute/application/inspectLocalComputeAsync.ts&quot;]
+                module_src_features_local_compute_application_planLocalComputeAsync_ts[&quot;src/features/local-compute/application/planLocalComputeAsync.ts&quot;]
+                module_src_features_local_compute_application_validateLocalComputeAsync_ts[&quot;src/features/local-compute/application/validateLocalComputeAsync.ts&quot;]
                 module_src_features_local_compute_composition_createInfraAdapter_ts[&quot;src/features/local-compute/composition/createInfraAdapter.ts&quot;]
                 module_src_index_ts[&quot;src/index.ts&quot;]
                 module_src_infraAdapter_test_ts[&quot;src/infraAdapter.test.ts&quot;]
+                module_src_types_localCompute_ts[&quot;src/types/localCompute.ts&quot;]
                 module_examples_basic_usage_index_ts --&gt; module_dist_index_d_ts
+                module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts
+                --&gt; module_src_types_localCompute_ts
+                module_src_features_local_compute_application_ensureLocalComputeAsync_ts --&gt;
+                module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+                module_src_features_local_compute_application_ensureLocalComputeAsync_ts --&gt;
+                module_src_types_localCompute_ts
+                module_src_features_local_compute_application_getLocalComputeStatusAsync_ts --&gt;
+                module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+                module_src_features_local_compute_application_getLocalComputeStatusAsync_ts --&gt;
+                module_src_types_localCompute_ts
+                module_src_features_local_compute_application_inspectLocalComputeAsync_ts --&gt;
+                module_src_types_localCompute_ts
+                module_src_features_local_compute_application_planLocalComputeAsync_ts --&gt;
+                module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+                module_src_features_local_compute_application_planLocalComputeAsync_ts --&gt;
+                module_src_types_localCompute_ts
+                module_src_features_local_compute_application_validateLocalComputeAsync_ts --&gt;
+                module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+                module_src_features_local_compute_application_validateLocalComputeAsync_ts --&gt;
+                module_src_types_localCompute_ts
                 module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
-                module_src_constants_infra_ts module_src_infraAdapter_test_ts --&gt;
-                module_src_index_ts
+                module_src_constants_infra_ts
+                module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
+                module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts
+                module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
+                module_src_features_local_compute_application_destroyLocalComputeAsync_ts
+                module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
+                module_src_features_local_compute_application_ensureLocalComputeAsync_ts
+                module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
+                module_src_features_local_compute_application_getLocalComputeStatusAsync_ts
+                module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
+                module_src_features_local_compute_application_planLocalComputeAsync_ts
+                module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
+                module_src_features_local_compute_application_validateLocalComputeAsync_ts
+                module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
+                module_src_types_localCompute_ts module_src_infraAdapter_test_ts --&gt;
+                module_src_index_ts module_src_infraAdapter_test_ts --&gt;
+                module_src_types_localCompute_ts
               </div>
               <details>
                 <summary>View Mermaid source</summary>
@@ -390,12 +924,38 @@ graph TD
 graph LR
   module_examples_basic_usage_index_ts[&quot;examples/basic-usage/index.ts&quot;]
   module_src_constants_infra_ts[&quot;src/constants/infra.ts&quot;]
+  module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts[&quot;src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts&quot;]
+  module_src_features_local_compute_application_destroyLocalComputeAsync_ts[&quot;src/features/local-compute/application/destroyLocalComputeAsync.ts&quot;]
+  module_src_features_local_compute_application_ensureLocalComputeAsync_ts[&quot;src/features/local-compute/application/ensureLocalComputeAsync.ts&quot;]
+  module_src_features_local_compute_application_getLocalComputeStatusAsync_ts[&quot;src/features/local-compute/application/getLocalComputeStatusAsync.ts&quot;]
+  module_src_features_local_compute_application_inspectLocalComputeAsync_ts[&quot;src/features/local-compute/application/inspectLocalComputeAsync.ts&quot;]
+  module_src_features_local_compute_application_planLocalComputeAsync_ts[&quot;src/features/local-compute/application/planLocalComputeAsync.ts&quot;]
+  module_src_features_local_compute_application_validateLocalComputeAsync_ts[&quot;src/features/local-compute/application/validateLocalComputeAsync.ts&quot;]
   module_src_features_local_compute_composition_createInfraAdapter_ts[&quot;src/features/local-compute/composition/createInfraAdapter.ts&quot;]
   module_src_index_ts[&quot;src/index.ts&quot;]
   module_src_infraAdapter_test_ts[&quot;src/infraAdapter.test.ts&quot;]
+  module_src_types_localCompute_ts[&quot;src/types/localCompute.ts&quot;]
   module_examples_basic_usage_index_ts --&gt; module_dist_index_d_ts
+  module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts --&gt; module_src_types_localCompute_ts
+  module_src_features_local_compute_application_ensureLocalComputeAsync_ts --&gt; module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+  module_src_features_local_compute_application_ensureLocalComputeAsync_ts --&gt; module_src_types_localCompute_ts
+  module_src_features_local_compute_application_getLocalComputeStatusAsync_ts --&gt; module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+  module_src_features_local_compute_application_getLocalComputeStatusAsync_ts --&gt; module_src_types_localCompute_ts
+  module_src_features_local_compute_application_inspectLocalComputeAsync_ts --&gt; module_src_types_localCompute_ts
+  module_src_features_local_compute_application_planLocalComputeAsync_ts --&gt; module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+  module_src_features_local_compute_application_planLocalComputeAsync_ts --&gt; module_src_types_localCompute_ts
+  module_src_features_local_compute_application_validateLocalComputeAsync_ts --&gt; module_src_features_local_compute_application_inspectLocalComputeAsync_ts
+  module_src_features_local_compute_application_validateLocalComputeAsync_ts --&gt; module_src_types_localCompute_ts
   module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_constants_infra_ts
+  module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts
+  module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_features_local_compute_application_destroyLocalComputeAsync_ts
+  module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_features_local_compute_application_ensureLocalComputeAsync_ts
+  module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_features_local_compute_application_getLocalComputeStatusAsync_ts
+  module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_features_local_compute_application_planLocalComputeAsync_ts
+  module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_features_local_compute_application_validateLocalComputeAsync_ts
+  module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; module_src_types_localCompute_ts
   module_src_infraAdapter_test_ts --&gt; module_src_index_ts
+  module_src_infraAdapter_test_ts --&gt; module_src_types_localCompute_ts
 </pre>
               </details>
             </article>
@@ -406,14 +966,35 @@ graph LR
                 graph LR
                 module_examples_basic_usage_index_ts[&quot;examples/basic-usage/index.ts&quot;]
                 module_src_constants_infra_ts[&quot;src/constants/infra.ts&quot;]
+                module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts[&quot;src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts&quot;]
+                module_src_features_local_compute_application_destroyLocalComputeAsync_ts[&quot;src/features/local-compute/application/destroyLocalComputeAsync.ts&quot;]
+                module_src_features_local_compute_application_ensureLocalComputeAsync_ts[&quot;src/features/local-compute/application/ensureLocalComputeAsync.ts&quot;]
+                module_src_features_local_compute_application_getLocalComputeStatusAsync_ts[&quot;src/features/local-compute/application/getLocalComputeStatusAsync.ts&quot;]
+                module_src_features_local_compute_application_inspectLocalComputeAsync_ts[&quot;src/features/local-compute/application/inspectLocalComputeAsync.ts&quot;]
+                module_src_features_local_compute_application_planLocalComputeAsync_ts[&quot;src/features/local-compute/application/planLocalComputeAsync.ts&quot;]
+                module_src_features_local_compute_application_validateLocalComputeAsync_ts[&quot;src/features/local-compute/application/validateLocalComputeAsync.ts&quot;]
                 module_src_features_local_compute_composition_createInfraAdapter_ts[&quot;src/features/local-compute/composition/createInfraAdapter.ts&quot;]
                 module_src_index_ts[&quot;src/index.ts&quot;]
                 module_src_infraAdapter_test_ts[&quot;src/infraAdapter.test.ts&quot;]
+                module_src_types_localCompute_ts[&quot;src/types/localCompute.ts&quot;]
                 export_createInfraAdapter[&quot;createInfraAdapter&quot;]
                 module_src_features_local_compute_composition_createInfraAdapter_ts --&gt;
-                export_createInfraAdapter
+                export_createInfraAdapter export_createInfraAdapter -.-&gt;
+                export_LocalComputeAdapterOptions
+                export_createNodeLocalHostProbe[&quot;createNodeLocalHostProbe&quot;]
+                module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts
+                --&gt; export_createNodeLocalHostProbe export_createNodeLocalHostProbe -.-&gt;
+                export_LocalHostProbe
                 export_infraAdapterDescriptor[&quot;infraAdapterDescriptor&quot;]
                 module_src_constants_infra_ts --&gt; export_infraAdapterDescriptor
+                export_LocalComputeAdapterOptions[&quot;LocalComputeAdapterOptions&quot;]
+                module_src_types_localCompute_ts --&gt; export_LocalComputeAdapterOptions
+                export_LocalComputeAdapterOptions -.-&gt; export_LocalHostProbe
+                export_LocalHostObservation[&quot;LocalHostObservation&quot;]
+                module_src_types_localCompute_ts --&gt; export_LocalHostObservation
+                export_LocalHostProbe[&quot;LocalHostProbe&quot;] module_src_types_localCompute_ts
+                --&gt; export_LocalHostProbe export_LocalHostProbe -.-&gt;
+                export_LocalHostObservation
               </div>
               <details>
                 <summary>View Mermaid source</summary>
@@ -421,15 +1002,271 @@ graph LR
 graph LR
   module_examples_basic_usage_index_ts[&quot;examples/basic-usage/index.ts&quot;]
   module_src_constants_infra_ts[&quot;src/constants/infra.ts&quot;]
+  module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts[&quot;src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts&quot;]
+  module_src_features_local_compute_application_destroyLocalComputeAsync_ts[&quot;src/features/local-compute/application/destroyLocalComputeAsync.ts&quot;]
+  module_src_features_local_compute_application_ensureLocalComputeAsync_ts[&quot;src/features/local-compute/application/ensureLocalComputeAsync.ts&quot;]
+  module_src_features_local_compute_application_getLocalComputeStatusAsync_ts[&quot;src/features/local-compute/application/getLocalComputeStatusAsync.ts&quot;]
+  module_src_features_local_compute_application_inspectLocalComputeAsync_ts[&quot;src/features/local-compute/application/inspectLocalComputeAsync.ts&quot;]
+  module_src_features_local_compute_application_planLocalComputeAsync_ts[&quot;src/features/local-compute/application/planLocalComputeAsync.ts&quot;]
+  module_src_features_local_compute_application_validateLocalComputeAsync_ts[&quot;src/features/local-compute/application/validateLocalComputeAsync.ts&quot;]
   module_src_features_local_compute_composition_createInfraAdapter_ts[&quot;src/features/local-compute/composition/createInfraAdapter.ts&quot;]
   module_src_index_ts[&quot;src/index.ts&quot;]
   module_src_infraAdapter_test_ts[&quot;src/infraAdapter.test.ts&quot;]
+  module_src_types_localCompute_ts[&quot;src/types/localCompute.ts&quot;]
   export_createInfraAdapter[&quot;createInfraAdapter&quot;]
   module_src_features_local_compute_composition_createInfraAdapter_ts --&gt; export_createInfraAdapter
+  export_createInfraAdapter -.-&gt; export_LocalComputeAdapterOptions
+  export_createNodeLocalHostProbe[&quot;createNodeLocalHostProbe&quot;]
+  module_src_features_local_compute_adapters_outbound_createNodeLocalHostProbe_ts --&gt; export_createNodeLocalHostProbe
+  export_createNodeLocalHostProbe -.-&gt; export_LocalHostProbe
   export_infraAdapterDescriptor[&quot;infraAdapterDescriptor&quot;]
   module_src_constants_infra_ts --&gt; export_infraAdapterDescriptor
+  export_LocalComputeAdapterOptions[&quot;LocalComputeAdapterOptions&quot;]
+  module_src_types_localCompute_ts --&gt; export_LocalComputeAdapterOptions
+  export_LocalComputeAdapterOptions -.-&gt; export_LocalHostProbe
+  export_LocalHostObservation[&quot;LocalHostObservation&quot;]
+  module_src_types_localCompute_ts --&gt; export_LocalHostObservation
+  export_LocalHostProbe[&quot;LocalHostProbe&quot;]
+  module_src_types_localCompute_ts --&gt; export_LocalHostProbe
+  export_LocalHostProbe -.-&gt; export_LocalHostObservation
 </pre>
               </details>
+            </article>
+            <article
+              class="item"
+              data-search="createInfraAdapter sequence diagrams/sequences/create-infra-adapter.mmd"
+            >
+              <h3>createInfraAdapter sequence</h3>
+              <p class="muted"><code>diagrams/sequences/create-infra-adapter.mmd</code></p>
+              <div class="mermaid">
+                sequenceDiagram participant participant_createInfraAdapter as createInfraAdapter
+                participant participant_createNodeLocalHostProbe as createNodeLocalHostProbe
+                participant_createInfraAdapter-&gt;&gt;participant_createNodeLocalHostProbe:
+                createNodeLocalHostProbe()
+                participant_createNodeLocalHostProbe--&gt;&gt;participant_createInfraAdapter: return
+              </div>
+              <details>
+                <summary>View Mermaid source</summary>
+                <pre>
+sequenceDiagram
+  participant participant_createInfraAdapter as createInfraAdapter
+  participant participant_createNodeLocalHostProbe as createNodeLocalHostProbe
+  participant_createInfraAdapter-&gt;&gt;participant_createNodeLocalHostProbe: createNodeLocalHostProbe()
+  participant_createNodeLocalHostProbe--&gt;&gt;participant_createInfraAdapter: return
+</pre>
+              </details>
+            </article>
+          </section>
+        </section>
+        <section
+          id="view-src-features-local-compute-adapters-outbound-createnodelocalhostprobe-ts"
+          class="view"
+          data-view="src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts</h2>
+            <article
+              class="item"
+              data-search="createNodeLocalHostProbe src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts Create the concrete Node host probe used by the default local compute adapter."
+            >
+              <h3>createNodeLocalHostProbe</h3>
+              <p class="muted">
+                <code
+                  >src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts:10:1</code
+                >
+              </p>
+              <p>Create the concrete Node host probe used by the default local compute adapter.</p>
+            </article>
+            <article
+              class="item"
+              data-search="inspectLocalHostAsync src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts Inspect the current process host and requested working directory."
+            >
+              <h3>inspectLocalHostAsync</h3>
+              <p class="muted">
+                <code
+                  >src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts:17:1</code
+                >
+              </p>
+              <p>Inspect the current process host and requested working directory.</p>
+            </article>
+            <article
+              class="item"
+              data-search="getLocalTarget src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts Map Node platform and architecture values to the portable Contracts target."
+            >
+              <h3>getLocalTarget</h3>
+              <p class="muted">
+                <code
+                  >src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts:35:1</code
+                >
+              </p>
+              <p>Map Node platform and architecture values to the portable Contracts target.</p>
+            </article>
+            <article
+              class="item"
+              data-search="canAccessAsync src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts Check one filesystem access mode without throwing host exceptions."
+            >
+              <h3>canAccessAsync</h3>
+              <p class="muted">
+                <code
+                  >src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts:67:1</code
+                >
+              </p>
+              <p>Check one filesystem access mode without throwing host exceptions.</p>
+            </article>
+          </section>
+        </section>
+        <section
+          id="view-src-features-local-compute-application-destroylocalcomputeasync-ts"
+          class="view"
+          data-view="src/features/local-compute/application/destroyLocalComputeAsync.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/features/local-compute/application/destroyLocalComputeAsync.ts</h2>
+            <article
+              class="item"
+              data-search="destroyLocalComputeAsync src/features/local-compute/application/destroyLocalComputeAsync.ts Release logical ownership without deleting or mutating the user&#39;s local host."
+            >
+              <h3>destroyLocalComputeAsync</h3>
+              <p class="muted">
+                <code>src/features/local-compute/application/destroyLocalComputeAsync.ts:9:1</code>
+              </p>
+              <p>
+                Release logical ownership without deleting or mutating the user&#39;s local host.
+              </p>
+            </article>
+          </section>
+        </section>
+        <section
+          id="view-src-features-local-compute-application-ensurelocalcomputeasync-ts"
+          class="view"
+          data-view="src/features/local-compute/application/ensureLocalComputeAsync.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/features/local-compute/application/ensureLocalComputeAsync.ts</h2>
+            <article
+              class="item"
+              data-search="ensureLocalComputeAsync src/features/local-compute/application/ensureLocalComputeAsync.ts Return the validated current host as a portable compute target without provisioning it."
+            >
+              <h3>ensureLocalComputeAsync</h3>
+              <p class="muted">
+                <code>src/features/local-compute/application/ensureLocalComputeAsync.ts:13:1</code>
+              </p>
+              <p>
+                Return the validated current host as a portable compute target without provisioning
+                it.
+              </p>
+            </article>
+          </section>
+        </section>
+        <section
+          id="view-src-features-local-compute-application-getlocalcomputestatusasync-ts"
+          class="view"
+          data-view="src/features/local-compute/application/getLocalComputeStatusAsync.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/features/local-compute/application/getLocalComputeStatusAsync.ts</h2>
+            <article
+              class="item"
+              data-search="getLocalComputeStatusAsync src/features/local-compute/application/getLocalComputeStatusAsync.ts Return current local host availability through the canonical compute status contract."
+            >
+              <h3>getLocalComputeStatusAsync</h3>
+              <p class="muted">
+                <code
+                  >src/features/local-compute/application/getLocalComputeStatusAsync.ts:11:1</code
+                >
+              </p>
+              <p>
+                Return current local host availability through the canonical compute status
+                contract.
+              </p>
+            </article>
+            <article
+              class="item"
+              data-search="invalidStatusSelection src/features/local-compute/application/getLocalComputeStatusAsync.ts Reject status requests for a different compute provider."
+            >
+              <h3>invalidStatusSelection</h3>
+              <p class="muted">
+                <code
+                  >src/features/local-compute/application/getLocalComputeStatusAsync.ts:35:1</code
+                >
+              </p>
+              <p>Reject status requests for a different compute provider.</p>
+            </article>
+          </section>
+        </section>
+        <section
+          id="view-src-features-local-compute-application-inspectlocalcomputeasync-ts"
+          class="view"
+          data-view="src/features/local-compute/application/inspectLocalComputeAsync.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/features/local-compute/application/inspectLocalComputeAsync.ts</h2>
+            <article
+              class="item"
+              data-search="inspectLocalComputeAsync src/features/local-compute/application/inspectLocalComputeAsync.ts Validate local selection and host capabilities, returning canonical ownership."
+            >
+              <h3>inspectLocalComputeAsync</h3>
+              <p class="muted">
+                <code>src/features/local-compute/application/inspectLocalComputeAsync.ts:16:1</code>
+              </p>
+              <p>Validate local selection and host capabilities, returning canonical ownership.</p>
+            </article>
+            <article
+              class="item"
+              data-search="invalidSelection src/features/local-compute/application/inspectLocalComputeAsync.ts Reject a local adapter invoked for a different compute selection."
+            >
+              <h3>invalidSelection</h3>
+              <p class="muted">
+                <code>src/features/local-compute/application/inspectLocalComputeAsync.ts:61:1</code>
+              </p>
+              <p>Reject a local adapter invoked for a different compute selection.</p>
+            </article>
+          </section>
+        </section>
+        <section
+          id="view-src-features-local-compute-application-planlocalcomputeasync-ts"
+          class="view"
+          data-view="src/features/local-compute/application/planLocalComputeAsync.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/features/local-compute/application/planLocalComputeAsync.ts</h2>
+            <article
+              class="item"
+              data-search="planLocalComputeAsync src/features/local-compute/application/planLocalComputeAsync.ts Report the existing local host as a no-op compute target."
+            >
+              <h3>planLocalComputeAsync</h3>
+              <p class="muted">
+                <code>src/features/local-compute/application/planLocalComputeAsync.ts:12:1</code>
+              </p>
+              <p>Report the existing local host as a no-op compute target.</p>
+            </article>
+          </section>
+        </section>
+        <section
+          id="view-src-features-local-compute-application-validatelocalcomputeasync-ts"
+          class="view"
+          data-view="src/features/local-compute/application/validateLocalComputeAsync.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/features/local-compute/application/validateLocalComputeAsync.ts</h2>
+            <article
+              class="item"
+              data-search="validateLocalComputeAsync src/features/local-compute/application/validateLocalComputeAsync.ts Validate the selected local host without mutation."
+            >
+              <h3>validateLocalComputeAsync</h3>
+              <p class="muted">
+                <code
+                  >src/features/local-compute/application/validateLocalComputeAsync.ts:11:1</code
+                >
+              </p>
+              <p>Validate the selected local host without mutation.</p>
             </article>
           </section>
         </section>
@@ -443,29 +1280,38 @@ graph LR
             <h2>src/features/local-compute/composition/createInfraAdapter.ts</h2>
             <article
               class="item"
-              data-search="createInfraAdapter src/features/local-compute/composition/createInfraAdapter.ts Create the canonical local-host compute adapter entrypoint.&#10;&#10;The foundation exposes the released Contracts boundary and fails lifecycle calls explicitly&#10;until the provider implementation phase supplies its external adapters."
+              data-search="createInfraAdapter src/features/local-compute/composition/createInfraAdapter.ts Create the canonical local-host compute adapter entrypoint.&#10;&#10;The default adapter inspects the current Node host and never provisions, suspends or deletes the&#10;user&#39;s machine. A probe can be injected for deterministic tests or another host environment."
             >
               <h3>createInfraAdapter</h3>
               <p class="muted">
-                <code>src/features/local-compute/composition/createInfraAdapter.ts:13:1</code>
+                <code>src/features/local-compute/composition/createInfraAdapter.ts:20:1</code>
               </p>
               <p>
-                Create the canonical local-host compute adapter entrypoint. The foundation exposes
-                the released Contracts boundary and fails lifecycle calls explicitly until the
-                provider implementation phase supplies its external adapters.
+                Create the canonical local-host compute adapter entrypoint. The default adapter
+                inspects the current Node host and never provisions, suspends or deletes the
+                user&#39;s machine. A probe can be injected for deterministic tests or another host
+                environment.
               </p>
             </article>
-            <article
-              class="item"
-              data-search="notImplementedAsync src/features/local-compute/composition/createInfraAdapter.ts Reject lifecycle execution until this package&#39;s provider phase is implemented."
-            >
-              <h3>notImplementedAsync</h3>
-              <p class="muted">
-                <code>src/features/local-compute/composition/createInfraAdapter.ts:25:1</code>
-              </p>
-              <p>
-                Reject lifecycle execution until this package&#39;s provider phase is implemented.
-              </p>
+          </section>
+        </section>
+        <section
+          id="view-src-infraadapter-test-ts"
+          class="view"
+          data-view="src/infraAdapter.test.ts"
+          hidden
+        >
+          <section class="panel">
+            <h2>src/infraAdapter.test.ts</h2>
+            <article class="item" data-search="createContext src/infraAdapter.test.ts ">
+              <h3>createContext</h3>
+              <p class="muted"><code>src/infraAdapter.test.ts:83:1</code></p>
+              <p class="empty">No description available.</p>
+            </article>
+            <article class="item" data-search="createDestroyRequest src/infraAdapter.test.ts ">
+              <h3>createDestroyRequest</h3>
+              <p class="muted"><code>src/infraAdapter.test.ts:102:1</code></p>
+              <p class="empty">No description available.</p>
             </article>
           </section>
         </section>
