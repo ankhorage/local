@@ -1,0 +1,5 @@
+sequenceDiagram
+  participant participant_createInfraAdapter as createInfraAdapter
+  participant participant_createNodeLocalHostProbe as createNodeLocalHostProbe
+  participant_createInfraAdapter->>participant_createNodeLocalHostProbe: createNodeLocalHostProbe()
+  participant_createNodeLocalHostProbe-->>participant_createInfraAdapter: return

@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.0.0",
+      "value": "v0.1.0",
       "color": "cb3837"
     },
     {
@@ -81,44 +81,152 @@
       "exports": ["infraAdapterDescriptor"]
     },
     {
+      "path": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/types/localCompute.ts"],
+      "exports": ["createNodeLocalHostProbe"]
+    },
+    {
+      "path": "src/features/local-compute/application/destroyLocalComputeAsync.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["destroyLocalComputeAsync"]
+    },
+    {
+      "path": "src/features/local-compute/application/ensureLocalComputeAsync.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+        "src/types/localCompute.ts"
+      ],
+      "exports": ["ensureLocalComputeAsync"]
+    },
+    {
+      "path": "src/features/local-compute/application/getLocalComputeStatusAsync.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+        "src/types/localCompute.ts"
+      ],
+      "exports": ["getLocalComputeStatusAsync"]
+    },
+    {
+      "path": "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+      "isEntrypoint": false,
+      "dependencies": ["src/types/localCompute.ts"],
+      "exports": ["InspectedLocalCompute", "inspectLocalComputeAsync"]
+    },
+    {
+      "path": "src/features/local-compute/application/planLocalComputeAsync.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+        "src/types/localCompute.ts"
+      ],
+      "exports": ["planLocalComputeAsync"]
+    },
+    {
+      "path": "src/features/local-compute/application/validateLocalComputeAsync.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+        "src/types/localCompute.ts"
+      ],
+      "exports": ["validateLocalComputeAsync"]
+    },
+    {
       "path": "src/features/local-compute/composition/createInfraAdapter.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/constants/infra.ts"],
+      "dependencies": [
+        "src/constants/infra.ts",
+        "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
+        "src/features/local-compute/application/destroyLocalComputeAsync.ts",
+        "src/features/local-compute/application/ensureLocalComputeAsync.ts",
+        "src/features/local-compute/application/getLocalComputeStatusAsync.ts",
+        "src/features/local-compute/application/planLocalComputeAsync.ts",
+        "src/features/local-compute/application/validateLocalComputeAsync.ts",
+        "src/types/localCompute.ts"
+      ],
       "exports": ["createInfraAdapter"]
     },
     {
       "path": "src/index.ts",
       "isEntrypoint": true,
       "dependencies": [],
-      "exports": ["createInfraAdapter", "infraAdapterDescriptor"]
+      "exports": [
+        "createInfraAdapter",
+        "createNodeLocalHostProbe",
+        "infraAdapterDescriptor",
+        "LocalComputeAdapterOptions",
+        "LocalHostObservation",
+        "LocalHostProbe"
+      ]
     },
     {
       "path": "src/infraAdapter.test.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/index.ts"],
+      "dependencies": ["src/index.ts", "src/types/localCompute.ts"],
       "exports": []
+    },
+    {
+      "path": "src/types/localCompute.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": ["LocalComputeAdapterOptions", "LocalHostObservation", "LocalHostProbe"]
     }
   ],
   "exports": [
     {
       "name": "createInfraAdapter",
-      "description": "Create the canonical local-host compute adapter entrypoint.\n\nThe foundation exposes the released Contracts boundary and fails lifecycle calls explicitly\nuntil the provider implementation phase supplies its external adapters.",
+      "description": "Create the canonical local-host compute adapter entrypoint.\n\nThe default adapter inspects the current Node host and never provisions, suspends or deletes the\nuser's machine. A probe can be injected for deterministic tests or another host environment.",
       "isReadme": true,
       "examples": [],
       "kind": "function",
       "modulePath": "src/features/local-compute/composition/createInfraAdapter.ts",
       "sourceLocation": {
         "filePath": "src/features/local-compute/composition/createInfraAdapter.ts",
-        "line": 13,
+        "line": 20,
         "column": 1
       },
       "exportPaths": ["src/index.ts"],
-      "relatedSymbols": [],
+      "relatedSymbols": ["LocalComputeAdapterOptions"],
       "signatures": [
         {
-          "label": "() => InfraComputeAdapter<\"local\">",
-          "parameters": [],
+          "label": "(options?: LocalComputeAdapterOptions) => InfraComputeAdapter<\"local\">",
+          "parameters": [
+            {
+              "name": "options",
+              "type": "LocalComputeAdapterOptions",
+              "required": false,
+              "description": null
+            }
+          ],
           "returnType": "InfraComputeAdapter<\"local\">",
+          "returnDescription": null
+        }
+      ],
+      "members": [],
+      "structuredRows": []
+    },
+    {
+      "name": "createNodeLocalHostProbe",
+      "description": "Create the concrete Node host probe used by the default local compute adapter.",
+      "isReadme": false,
+      "examples": [],
+      "kind": "function",
+      "modulePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
+      "sourceLocation": {
+        "filePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
+        "line": 10,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": ["LocalHostProbe"],
+      "signatures": [
+        {
+          "label": "() => LocalHostProbe",
+          "parameters": [],
+          "returnType": "LocalHostProbe",
           "returnDescription": null
         }
       ],
@@ -142,25 +250,255 @@
       "signatures": [],
       "members": [],
       "structuredRows": []
+    },
+    {
+      "name": "LocalComputeAdapterOptions",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/types/localCompute.ts",
+      "sourceLocation": {
+        "filePath": "src/types/localCompute.ts",
+        "line": 19,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": ["LocalHostProbe"],
+      "signatures": [],
+      "members": [
+        {
+          "name": "probe",
+          "kind": "property",
+          "type": "LocalHostProbe | undefined",
+          "required": false,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "LocalHostObservation",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/types/localCompute.ts",
+      "sourceLocation": {
+        "filePath": "src/types/localCompute.ts",
+        "line": 3,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [
+        {
+          "name": "detail",
+          "kind": "property",
+          "type": "string | undefined",
+          "required": false,
+          "description": null
+        },
+        {
+          "name": "exists",
+          "kind": "property",
+          "type": "boolean",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "readable",
+          "kind": "property",
+          "type": "boolean",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "target",
+          "kind": "property",
+          "type": "{ readonly id: string; readonly os: \"linux\" | \"darwin\" | \"windows\"; readonly architecture: \"amd64\" | \"arm64\"; } & { readonly kind: \"local-host\"; }",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "workingDirectory",
+          "kind": "property",
+          "type": "string",
+          "required": true,
+          "description": null
+        },
+        {
+          "name": "writable",
+          "kind": "property",
+          "type": "boolean",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
+    },
+    {
+      "name": "LocalHostProbe",
+      "description": null,
+      "isReadme": false,
+      "examples": [],
+      "kind": "type",
+      "modulePath": "src/types/localCompute.ts",
+      "sourceLocation": {
+        "filePath": "src/types/localCompute.ts",
+        "line": 12,
+        "column": 1
+      },
+      "exportPaths": ["src/index.ts"],
+      "relatedSymbols": ["LocalHostObservation"],
+      "signatures": [],
+      "members": [
+        {
+          "name": "inspectAsync",
+          "kind": "method",
+          "type": "(workingDirectory: string, signal?: AbortSignal) => Promise<InfraResult<LocalHostObservation>>",
+          "required": true,
+          "description": null
+        }
+      ],
+      "structuredRows": []
     }
   ],
   "components": [],
   "sourceFunctions": [
     {
-      "name": "createInfraAdapter",
-      "description": "Create the canonical local-host compute adapter entrypoint.\n\nThe foundation exposes the released Contracts boundary and fails lifecycle calls explicitly\nuntil the provider implementation phase supplies its external adapters.",
+      "name": "createNodeLocalHostProbe",
+      "description": "Create the concrete Node host probe used by the default local compute adapter.",
       "sourceLocation": {
-        "filePath": "src/features/local-compute/composition/createInfraAdapter.ts",
+        "filePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
+        "line": 10,
+        "column": 1
+      }
+    },
+    {
+      "name": "inspectLocalHostAsync",
+      "description": "Inspect the current process host and requested working directory.",
+      "sourceLocation": {
+        "filePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
+        "line": 17,
+        "column": 1
+      }
+    },
+    {
+      "name": "getLocalTarget",
+      "description": "Map Node platform and architecture values to the portable Contracts target.",
+      "sourceLocation": {
+        "filePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
+        "line": 35,
+        "column": 1
+      }
+    },
+    {
+      "name": "canAccessAsync",
+      "description": "Check one filesystem access mode without throwing host exceptions.",
+      "sourceLocation": {
+        "filePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
+        "line": 67,
+        "column": 1
+      }
+    },
+    {
+      "name": "destroyLocalComputeAsync",
+      "description": "Release logical ownership without deleting or mutating the user's local host.",
+      "sourceLocation": {
+        "filePath": "src/features/local-compute/application/destroyLocalComputeAsync.ts",
+        "line": 9,
+        "column": 1
+      }
+    },
+    {
+      "name": "ensureLocalComputeAsync",
+      "description": "Return the validated current host as a portable compute target without provisioning it.",
+      "sourceLocation": {
+        "filePath": "src/features/local-compute/application/ensureLocalComputeAsync.ts",
         "line": 13,
         "column": 1
       }
     },
     {
-      "name": "notImplementedAsync",
-      "description": "Reject lifecycle execution until this package's provider phase is implemented.",
+      "name": "getLocalComputeStatusAsync",
+      "description": "Return current local host availability through the canonical compute status contract.",
+      "sourceLocation": {
+        "filePath": "src/features/local-compute/application/getLocalComputeStatusAsync.ts",
+        "line": 11,
+        "column": 1
+      }
+    },
+    {
+      "name": "invalidStatusSelection",
+      "description": "Reject status requests for a different compute provider.",
+      "sourceLocation": {
+        "filePath": "src/features/local-compute/application/getLocalComputeStatusAsync.ts",
+        "line": 35,
+        "column": 1
+      }
+    },
+    {
+      "name": "inspectLocalComputeAsync",
+      "description": "Validate local selection and host capabilities, returning canonical ownership.",
+      "sourceLocation": {
+        "filePath": "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+        "line": 16,
+        "column": 1
+      }
+    },
+    {
+      "name": "invalidSelection",
+      "description": "Reject a local adapter invoked for a different compute selection.",
+      "sourceLocation": {
+        "filePath": "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+        "line": 61,
+        "column": 1
+      }
+    },
+    {
+      "name": "planLocalComputeAsync",
+      "description": "Report the existing local host as a no-op compute target.",
+      "sourceLocation": {
+        "filePath": "src/features/local-compute/application/planLocalComputeAsync.ts",
+        "line": 12,
+        "column": 1
+      }
+    },
+    {
+      "name": "validateLocalComputeAsync",
+      "description": "Validate the selected local host without mutation.",
+      "sourceLocation": {
+        "filePath": "src/features/local-compute/application/validateLocalComputeAsync.ts",
+        "line": 11,
+        "column": 1
+      }
+    },
+    {
+      "name": "createInfraAdapter",
+      "description": "Create the canonical local-host compute adapter entrypoint.\n\nThe default adapter inspects the current Node host and never provisions, suspends or deletes the\nuser's machine. A probe can be injected for deterministic tests or another host environment.",
       "sourceLocation": {
         "filePath": "src/features/local-compute/composition/createInfraAdapter.ts",
-        "line": 25,
+        "line": 20,
+        "column": 1
+      }
+    },
+    {
+      "name": "createContext",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/infraAdapter.test.ts",
+        "line": 83,
+        "column": 1
+      }
+    },
+    {
+      "name": "createDestroyRequest",
+      "description": null,
+      "sourceLocation": {
+        "filePath": "src/infraAdapter.test.ts",
+        "line": 102,
         "column": 1
       }
     }
@@ -171,8 +509,16 @@
       "name": "createInfraAdapter",
       "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts",
       "symbolName": "createInfraAdapter",
-      "description": "Create the canonical local-host compute adapter entrypoint.\n\nThe foundation exposes the released Contracts boundary and fails lifecycle calls explicitly\nuntil the provider implementation phase supplies its external adapters.",
+      "description": "Create the canonical local-host compute adapter entrypoint.\n\nThe default adapter inspects the current Node host and never provisions, suspends or deletes the\nuser's machine. A probe can be injected for deterministic tests or another host environment.",
       "isReadme": true
+    },
+    {
+      "kind": "export",
+      "name": "createNodeLocalHostProbe",
+      "sourcePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
+      "symbolName": "createNodeLocalHostProbe",
+      "description": "Create the concrete Node host probe used by the default local compute adapter.",
+      "isReadme": false
     }
   ],
   "graphs": {
@@ -184,7 +530,17 @@
       },
       {
         "fromPath": "src/index.ts",
+        "toPath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
         "toPath": "src/features/local-compute/composition/createInfraAdapter.ts",
+        "sourcePath": "src/index.ts"
+      },
+      {
+        "fromPath": "src/index.ts",
+        "toPath": "src/types/localCompute.ts",
         "sourcePath": "src/index.ts"
       },
       {
@@ -193,14 +549,104 @@
         "sourcePath": "src/infraAdapter.test.ts"
       },
       {
+        "fromPath": "src/infraAdapter.test.ts",
+        "toPath": "src/types/localCompute.ts",
+        "sourcePath": "src/infraAdapter.test.ts"
+      },
+      {
         "fromPath": "examples/basic-usage/index.ts",
         "toPath": "dist/index.d.ts",
         "sourcePath": "examples/basic-usage/index.ts"
       },
       {
+        "fromPath": "src/features/local-compute/application/ensureLocalComputeAsync.ts",
+        "toPath": "src/types/localCompute.ts",
+        "sourcePath": "src/features/local-compute/application/ensureLocalComputeAsync.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/application/ensureLocalComputeAsync.ts",
+        "toPath": "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+        "sourcePath": "src/features/local-compute/application/ensureLocalComputeAsync.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/application/getLocalComputeStatusAsync.ts",
+        "toPath": "src/types/localCompute.ts",
+        "sourcePath": "src/features/local-compute/application/getLocalComputeStatusAsync.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/application/getLocalComputeStatusAsync.ts",
+        "toPath": "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+        "sourcePath": "src/features/local-compute/application/getLocalComputeStatusAsync.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+        "toPath": "src/types/localCompute.ts",
+        "sourcePath": "src/features/local-compute/application/inspectLocalComputeAsync.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/application/planLocalComputeAsync.ts",
+        "toPath": "src/types/localCompute.ts",
+        "sourcePath": "src/features/local-compute/application/planLocalComputeAsync.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/application/planLocalComputeAsync.ts",
+        "toPath": "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+        "sourcePath": "src/features/local-compute/application/planLocalComputeAsync.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/application/validateLocalComputeAsync.ts",
+        "toPath": "src/types/localCompute.ts",
+        "sourcePath": "src/features/local-compute/application/validateLocalComputeAsync.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/application/validateLocalComputeAsync.ts",
+        "toPath": "src/features/local-compute/application/inspectLocalComputeAsync.ts",
+        "sourcePath": "src/features/local-compute/application/validateLocalComputeAsync.ts"
+      },
+      {
         "fromPath": "src/features/local-compute/composition/createInfraAdapter.ts",
         "toPath": "src/constants/infra.ts",
         "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/composition/createInfraAdapter.ts",
+        "toPath": "src/types/localCompute.ts",
+        "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/composition/createInfraAdapter.ts",
+        "toPath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
+        "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/composition/createInfraAdapter.ts",
+        "toPath": "src/features/local-compute/application/destroyLocalComputeAsync.ts",
+        "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/composition/createInfraAdapter.ts",
+        "toPath": "src/features/local-compute/application/ensureLocalComputeAsync.ts",
+        "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/composition/createInfraAdapter.ts",
+        "toPath": "src/features/local-compute/application/getLocalComputeStatusAsync.ts",
+        "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/composition/createInfraAdapter.ts",
+        "toPath": "src/features/local-compute/application/planLocalComputeAsync.ts",
+        "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/composition/createInfraAdapter.ts",
+        "toPath": "src/features/local-compute/application/validateLocalComputeAsync.ts",
+        "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
+      },
+      {
+        "fromPath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
+        "toPath": "src/types/localCompute.ts",
+        "sourcePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts"
       }
     ],
     "calls": [
@@ -235,47 +681,179 @@
         "sourcePath": "src/infraAdapter.test.ts"
       },
       {
+        "fromSymbol": "src/infraAdapter.test.ts",
+        "toSymbol": "createContext",
+        "callExpression": "createContext",
+        "sourcePath": "src/infraAdapter.test.ts"
+      },
+      {
+        "fromSymbol": "src/infraAdapter.test.ts",
+        "toSymbol": "createDestroyRequest",
+        "callExpression": "createDestroyRequest",
+        "sourcePath": "src/infraAdapter.test.ts"
+      },
+      {
         "fromSymbol": "examples/basic-usage/index.ts",
         "toSymbol": "createInfraAdapter",
         "callExpression": "createInfraAdapter",
         "sourcePath": "examples/basic-usage/index.ts"
       },
       {
+        "fromSymbol": "ensureLocalComputeAsync",
+        "toSymbol": "inspectLocalComputeAsync",
+        "callExpression": "inspectLocalComputeAsync",
+        "sourcePath": "src/features/local-compute/application/ensureLocalComputeAsync.ts"
+      },
+      {
+        "fromSymbol": "getLocalComputeStatusAsync",
+        "toSymbol": "invalidStatusSelection",
+        "callExpression": "invalidStatusSelection",
+        "sourcePath": "src/features/local-compute/application/getLocalComputeStatusAsync.ts"
+      },
+      {
+        "fromSymbol": "getLocalComputeStatusAsync",
+        "toSymbol": "inspectLocalComputeAsync",
+        "callExpression": "inspectLocalComputeAsync",
+        "sourcePath": "src/features/local-compute/application/getLocalComputeStatusAsync.ts"
+      },
+      {
+        "fromSymbol": "inspectLocalComputeAsync",
+        "toSymbol": "invalidSelection",
+        "callExpression": "invalidSelection",
+        "sourcePath": "src/features/local-compute/application/inspectLocalComputeAsync.ts"
+      },
+      {
+        "fromSymbol": "inspectLocalComputeAsync",
+        "toSymbol": "inspectAsync",
+        "callExpression": "probe.inspectAsync",
+        "sourcePath": "src/features/local-compute/application/inspectLocalComputeAsync.ts"
+      },
+      {
+        "fromSymbol": "planLocalComputeAsync",
+        "toSymbol": "inspectLocalComputeAsync",
+        "callExpression": "inspectLocalComputeAsync",
+        "sourcePath": "src/features/local-compute/application/planLocalComputeAsync.ts"
+      },
+      {
+        "fromSymbol": "validateLocalComputeAsync",
+        "toSymbol": "inspectLocalComputeAsync",
+        "callExpression": "inspectLocalComputeAsync",
+        "sourcePath": "src/features/local-compute/application/validateLocalComputeAsync.ts"
+      },
+      {
+        "fromSymbol": "createInfraAdapter",
+        "toSymbol": "createNodeLocalHostProbe",
+        "callExpression": "createNodeLocalHostProbe",
+        "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
+      },
+      {
         "fromSymbol": "validateAsync",
-        "toSymbol": "notImplementedAsync",
-        "callExpression": "notImplementedAsync",
+        "toSymbol": "validateLocalComputeAsync",
+        "callExpression": "validateLocalComputeAsync",
         "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
       },
       {
         "fromSymbol": "planAsync",
-        "toSymbol": "notImplementedAsync",
-        "callExpression": "notImplementedAsync",
+        "toSymbol": "planLocalComputeAsync",
+        "callExpression": "planLocalComputeAsync",
         "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
       },
       {
         "fromSymbol": "ensureAsync",
-        "toSymbol": "notImplementedAsync",
-        "callExpression": "notImplementedAsync",
+        "toSymbol": "ensureLocalComputeAsync",
+        "callExpression": "ensureLocalComputeAsync",
         "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
       },
       {
         "fromSymbol": "statusAsync",
-        "toSymbol": "notImplementedAsync",
-        "callExpression": "notImplementedAsync",
+        "toSymbol": "getLocalComputeStatusAsync",
+        "callExpression": "getLocalComputeStatusAsync",
         "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
       },
       {
         "fromSymbol": "destroyAsync",
-        "toSymbol": "notImplementedAsync",
-        "callExpression": "notImplementedAsync",
+        "toSymbol": "destroyLocalComputeAsync",
+        "callExpression": "destroyLocalComputeAsync",
         "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
+      },
+      {
+        "fromSymbol": "inspectAsync",
+        "toSymbol": "inspectLocalHostAsync",
+        "callExpression": "inspectLocalHostAsync",
+        "sourcePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts"
+      },
+      {
+        "fromSymbol": "inspectLocalHostAsync",
+        "toSymbol": "getLocalTarget",
+        "callExpression": "getLocalTarget",
+        "sourcePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts"
+      },
+      {
+        "fromSymbol": "inspectLocalHostAsync",
+        "toSymbol": "stat",
+        "callExpression": "stat",
+        "sourcePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts"
+      },
+      {
+        "fromSymbol": "inspectLocalHostAsync",
+        "toSymbol": "canAccessAsync",
+        "callExpression": "canAccessAsync",
+        "sourcePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts"
+      },
+      {
+        "fromSymbol": "getLocalTarget",
+        "toSymbol": "platform",
+        "callExpression": "platform",
+        "sourcePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts"
+      },
+      {
+        "fromSymbol": "getLocalTarget",
+        "toSymbol": "arch",
+        "callExpression": "arch",
+        "sourcePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts"
+      },
+      {
+        "fromSymbol": "canAccessAsync",
+        "toSymbol": "access",
+        "callExpression": "access",
+        "sourcePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts"
       }
     ],
     "typeReferences": [
       {
+        "fromSymbol": "createNodeLocalHostProbe",
+        "toType": "LocalHostProbe",
+        "sourcePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts"
+      },
+      {
         "fromSymbol": "createInfraAdapter",
         "toType": "InfraComputeAdapter",
         "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
+      },
+      {
+        "fromSymbol": "createInfraAdapter",
+        "toType": "LocalComputeAdapterOptions",
+        "sourcePath": "src/features/local-compute/composition/createInfraAdapter.ts"
+      },
+      {
+        "fromSymbol": "LocalComputeAdapterOptions",
+        "toType": "LocalHostProbe",
+        "sourcePath": "src/types/localCompute.ts"
+      },
+      {
+        "fromSymbol": "LocalHostProbe",
+        "toType": "AbortSignal",
+        "sourcePath": "src/types/localCompute.ts"
+      },
+      {
+        "fromSymbol": "LocalHostProbe",
+        "toType": "InfraResult",
+        "sourcePath": "src/types/localCompute.ts"
+      },
+      {
+        "fromSymbol": "LocalHostProbe",
+        "toType": "LocalHostObservation",
+        "sourcePath": "src/types/localCompute.ts"
       }
     ],
     "componentComposition": []

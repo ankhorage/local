@@ -1,23 +1,55 @@
 [
   {
     "name": "createInfraAdapter",
-    "description": "Create the canonical local-host compute adapter entrypoint.\n\nThe foundation exposes the released Contracts boundary and fails lifecycle calls explicitly\nuntil the provider implementation phase supplies its external adapters.",
+    "description": "Create the canonical local-host compute adapter entrypoint.\n\nThe default adapter inspects the current Node host and never provisions, suspends or deletes the\nuser's machine. A probe can be injected for deterministic tests or another host environment.",
     "isReadme": true,
     "examples": [],
     "kind": "function",
     "modulePath": "src/features/local-compute/composition/createInfraAdapter.ts",
     "sourceLocation": {
       "filePath": "src/features/local-compute/composition/createInfraAdapter.ts",
-      "line": 13,
+      "line": 20,
       "column": 1
     },
     "exportPaths": ["src/index.ts"],
-    "relatedSymbols": [],
+    "relatedSymbols": ["LocalComputeAdapterOptions"],
     "signatures": [
       {
-        "label": "() => InfraComputeAdapter<\"local\">",
-        "parameters": [],
+        "label": "(options?: LocalComputeAdapterOptions) => InfraComputeAdapter<\"local\">",
+        "parameters": [
+          {
+            "name": "options",
+            "type": "LocalComputeAdapterOptions",
+            "required": false,
+            "description": null
+          }
+        ],
         "returnType": "InfraComputeAdapter<\"local\">",
+        "returnDescription": null
+      }
+    ],
+    "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "createNodeLocalHostProbe",
+    "description": "Create the concrete Node host probe used by the default local compute adapter.",
+    "isReadme": false,
+    "examples": [],
+    "kind": "function",
+    "modulePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
+    "sourceLocation": {
+      "filePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
+      "line": 10,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["LocalHostProbe"],
+    "signatures": [
+      {
+        "label": "() => LocalHostProbe",
+        "parameters": [],
+        "returnType": "LocalHostProbe",
         "returnDescription": null
       }
     ],
@@ -40,6 +72,119 @@
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
+    "structuredRows": []
+  },
+  {
+    "name": "LocalComputeAdapterOptions",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/localCompute.ts",
+    "sourceLocation": {
+      "filePath": "src/types/localCompute.ts",
+      "line": 19,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["LocalHostProbe"],
+    "signatures": [],
+    "members": [
+      {
+        "name": "probe",
+        "kind": "property",
+        "type": "LocalHostProbe | undefined",
+        "required": false,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "LocalHostObservation",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/localCompute.ts",
+    "sourceLocation": {
+      "filePath": "src/types/localCompute.ts",
+      "line": 3,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [
+      {
+        "name": "detail",
+        "kind": "property",
+        "type": "string | undefined",
+        "required": false,
+        "description": null
+      },
+      {
+        "name": "exists",
+        "kind": "property",
+        "type": "boolean",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "readable",
+        "kind": "property",
+        "type": "boolean",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "target",
+        "kind": "property",
+        "type": "{ readonly id: string; readonly os: \"linux\" | \"darwin\" | \"windows\"; readonly architecture: \"amd64\" | \"arm64\"; } & { readonly kind: \"local-host\"; }",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "workingDirectory",
+        "kind": "property",
+        "type": "string",
+        "required": true,
+        "description": null
+      },
+      {
+        "name": "writable",
+        "kind": "property",
+        "type": "boolean",
+        "required": true,
+        "description": null
+      }
+    ],
+    "structuredRows": []
+  },
+  {
+    "name": "LocalHostProbe",
+    "description": null,
+    "isReadme": false,
+    "examples": [],
+    "kind": "type",
+    "modulePath": "src/types/localCompute.ts",
+    "sourceLocation": {
+      "filePath": "src/types/localCompute.ts",
+      "line": 12,
+      "column": 1
+    },
+    "exportPaths": ["src/index.ts"],
+    "relatedSymbols": ["LocalHostObservation"],
+    "signatures": [],
+    "members": [
+      {
+        "name": "inspectAsync",
+        "kind": "method",
+        "type": "(workingDirectory: string, signal?: AbortSignal) => Promise<InfraResult<LocalHostObservation>>",
+        "required": true,
+        "description": null
+      }
+    ],
     "structuredRows": []
   }
 ]

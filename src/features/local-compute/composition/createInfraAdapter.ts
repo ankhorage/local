@@ -1,37 +1,32 @@
-import type { InfraComputeAdapter, InfraResult } from '@ankhorage/contracts/infra';
+import type { InfraComputeAdapter } from '@ankhorage/contracts/infra';
 
 import { infraAdapterDescriptor } from '../../../constants/infra';
+import type { LocalComputeAdapterOptions } from '../../../types/localCompute';
+import { createNodeLocalHostProbe } from '../adapters/outbound/createNodeLocalHostProbe';
+import { destroyLocalComputeAsync } from '../application/destroyLocalComputeAsync';
+import { ensureLocalComputeAsync } from '../application/ensureLocalComputeAsync';
+import { getLocalComputeStatusAsync } from '../application/getLocalComputeStatusAsync';
+import { planLocalComputeAsync } from '../application/planLocalComputeAsync';
+import { validateLocalComputeAsync } from '../application/validateLocalComputeAsync';
 
 /***
  * Create the canonical local-host compute adapter entrypoint.
  *
- * The foundation exposes the released Contracts boundary and fails lifecycle calls explicitly
- * until the provider implementation phase supplies its external adapters.
+ * The default adapter inspects the current Node host and never provisions, suspends or deletes the
+ * user's machine. A probe can be injected for deterministic tests or another host environment.
  *
  * @readme
  */
-export function createInfraAdapter(): InfraComputeAdapter<'local'> {
+export function createInfraAdapter(
+  options: LocalComputeAdapterOptions = {},
+): InfraComputeAdapter<'local'> {
+  const probe = options.probe ?? createNodeLocalHostProbe();
   return {
     descriptor: infraAdapterDescriptor,
-    validateAsync: () => notImplementedAsync(),
-    planAsync: () => notImplementedAsync(),
-    ensureAsync: () => notImplementedAsync(),
-    statusAsync: () => notImplementedAsync(),
-    destroyAsync: () => notImplementedAsync(),
+    validateAsync: (context, selection) => validateLocalComputeAsync(probe, context, selection),
+    planAsync: (context, selection) => planLocalComputeAsync(probe, context, selection),
+    ensureAsync: (context, selection) => ensureLocalComputeAsync(probe, context, selection),
+    statusAsync: (context) => getLocalComputeStatusAsync(probe, context),
+    destroyAsync: (context, request) => destroyLocalComputeAsync(context, request),
   };
-}
-
-/*** Reject lifecycle execution until this package's provider phase is implemented. */
-function notImplementedAsync<T>(): Promise<InfraResult<T>> {
-  return Promise.resolve({
-    ok: false,
-    diagnostics: [
-      {
-        severity: 'error',
-        code: 'local_adapter_not_implemented',
-        message:
-          'The local-host compute adapter foundation is installed, but its lifecycle is not implemented yet.',
-      },
-    ],
-  });
 }
