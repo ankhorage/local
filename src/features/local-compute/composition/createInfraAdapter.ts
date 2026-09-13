@@ -6,6 +6,7 @@ import { createNodeLocalHostProbe } from '../adapters/outbound/createNodeLocalHo
 import { destroyLocalComputeAsync } from '../application/destroyLocalComputeAsync';
 import { ensureLocalComputeAsync } from '../application/ensureLocalComputeAsync';
 import { getLocalComputeStatusAsync } from '../application/getLocalComputeStatusAsync';
+import { inspectLocalComputeSnapshotAsync } from '../application/inspectLocalComputeSnapshotAsync';
 import { planLocalComputeAsync } from '../application/planLocalComputeAsync';
 import { validateLocalComputeAsync } from '../application/validateLocalComputeAsync';
 
@@ -24,6 +25,8 @@ export function createInfraAdapter(
   return {
     descriptor: infraAdapterDescriptor,
     validateAsync: (context, selection) => validateLocalComputeAsync(probe, context, selection),
+    inspectAsync: (context, selection) =>
+      inspectLocalComputeSnapshotAsync(probe, context, selection),
     planAsync: (context, selection) => planLocalComputeAsync(probe, context, selection),
     ensureAsync: (context, selection) => ensureLocalComputeAsync(probe, context, selection),
     statusAsync: (context) => getLocalComputeStatusAsync(probe, context),
