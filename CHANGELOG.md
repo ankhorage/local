@@ -1,5 +1,11 @@
 # @ankhorage/local
 
+## 0.3.0
+
+### Minor Changes
+
+- 25091e4: Expose read-only local compute snapshots for orchestration.
+
 ## 0.2.0
 
 ### Minor Changes
