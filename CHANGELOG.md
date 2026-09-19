@@ -1,5 +1,11 @@
 # @ankhorage/local
 
+## 0.3.1
+
+### Patch Changes
+
+- dc894b8: Update Ankhorage dependencies: `@ankhorage/contracts`, `@ankhorage/paradox`.
+
 ## 0.3.0
 
 ### Minor Changes
