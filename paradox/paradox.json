@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.2.0",
+      "value": "v0.3.2",
       "color": "cb3837"
     },
     {
@@ -55,42 +55,61 @@
     },
     {
       "id": "docs",
-      "label": "docs",
-      "value": "paradox",
-      "color": "0f766e"
+      "label": "paradox",
+      "value": "canonical",
+      "color": "0a7f3f"
     }
   ],
-  "usage": null,
-  "readmeUsageDescription": null,
-  "readmeUsage": [],
-  "readmeCli": null,
-  "readmeConfig": null,
+  "usage": {
+    "packageName": "@ankhorage/local",
+    "command": "ankh local --help"
+  },
+  "usageEntries": [],
+  "exampleCount": 1,
+  "findings": [],
+  "readmeConfig": {
+    "language": "ts",
+    "code": "import { defineParadoxConfig } from '@ankhorage/paradox';\n\nexport default defineParadoxConfig({\n  mode: 'write',\n  package: { root: '.', entrypoints: ['src/index.ts'] },\n  output: { dir: './paradox' },\n});",
+    "sourcePath": "paradox.config.ts"
+  },
   "config": null,
-  "entrypoints": ["src/index.ts"],
+  "entrypoints": [
+    "src/index.ts"
+  ],
   "modules": [
     {
       "path": "examples/basic-usage/index.ts",
       "isEntrypoint": false,
-      "dependencies": ["dist/index.d.ts"],
+      "dependencies": [
+        "dist/index.d.ts"
+      ],
       "exports": []
     },
     {
       "path": "src/constants/infra.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["infraAdapterDescriptor"]
+      "exports": [
+        "infraAdapterDescriptor"
+      ]
     },
     {
       "path": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/types/localCompute.ts"],
-      "exports": ["createNodeLocalHostProbe"]
+      "dependencies": [
+        "src/types/localCompute.ts"
+      ],
+      "exports": [
+        "createNodeLocalHostProbe"
+      ]
     },
     {
       "path": "src/features/local-compute/application/destroyLocalComputeAsync.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["destroyLocalComputeAsync"]
+      "exports": [
+        "destroyLocalComputeAsync"
+      ]
     },
     {
       "path": "src/features/local-compute/application/ensureLocalComputeAsync.ts",
@@ -99,7 +118,9 @@
         "src/features/local-compute/application/inspectLocalComputeSnapshotAsync.ts",
         "src/types/localCompute.ts"
       ],
-      "exports": ["ensureLocalComputeAsync"]
+      "exports": [
+        "ensureLocalComputeAsync"
+      ]
     },
     {
       "path": "src/features/local-compute/application/getLocalComputeStatusAsync.ts",
@@ -108,13 +129,20 @@
         "src/features/local-compute/application/inspectLocalComputeAsync.ts",
         "src/types/localCompute.ts"
       ],
-      "exports": ["getLocalComputeStatusAsync"]
+      "exports": [
+        "getLocalComputeStatusAsync"
+      ]
     },
     {
       "path": "src/features/local-compute/application/inspectLocalComputeAsync.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/types/localCompute.ts"],
-      "exports": ["InspectedLocalCompute", "inspectLocalComputeAsync"]
+      "dependencies": [
+        "src/types/localCompute.ts"
+      ],
+      "exports": [
+        "InspectedLocalCompute",
+        "inspectLocalComputeAsync"
+      ]
     },
     {
       "path": "src/features/local-compute/application/inspectLocalComputeSnapshotAsync.ts",
@@ -123,7 +151,9 @@
         "src/features/local-compute/application/inspectLocalComputeAsync.ts",
         "src/types/localCompute.ts"
       ],
-      "exports": ["inspectLocalComputeSnapshotAsync"]
+      "exports": [
+        "inspectLocalComputeSnapshotAsync"
+      ]
     },
     {
       "path": "src/features/local-compute/application/planLocalComputeAsync.ts",
@@ -132,7 +162,9 @@
         "src/features/local-compute/application/inspectLocalComputeAsync.ts",
         "src/types/localCompute.ts"
       ],
-      "exports": ["planLocalComputeAsync"]
+      "exports": [
+        "planLocalComputeAsync"
+      ]
     },
     {
       "path": "src/features/local-compute/application/validateLocalComputeAsync.ts",
@@ -141,7 +173,9 @@
         "src/features/local-compute/application/inspectLocalComputeAsync.ts",
         "src/types/localCompute.ts"
       ],
-      "exports": ["validateLocalComputeAsync"]
+      "exports": [
+        "validateLocalComputeAsync"
+      ]
     },
     {
       "path": "src/features/local-compute/composition/createInfraAdapter.ts",
@@ -157,7 +191,9 @@
         "src/features/local-compute/application/validateLocalComputeAsync.ts",
         "src/types/localCompute.ts"
       ],
-      "exports": ["createInfraAdapter"]
+      "exports": [
+        "createInfraAdapter"
+      ]
     },
     {
       "path": "src/index.ts",
@@ -175,22 +211,31 @@
     {
       "path": "src/infraAdapter.test.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/index.ts", "src/types/localCompute.ts"],
+      "dependencies": [
+        "src/index.ts",
+        "src/types/localCompute.ts"
+      ],
       "exports": []
     },
     {
       "path": "src/types/localCompute.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["LocalComputeAdapterOptions", "LocalHostObservation", "LocalHostProbe"]
+      "exports": [
+        "LocalComputeAdapterOptions",
+        "LocalHostObservation",
+        "LocalHostProbe"
+      ]
     }
   ],
   "exports": [
     {
       "name": "createInfraAdapter",
+      "title": null,
       "description": "Create the canonical local-host compute adapter entrypoint.\n\nThe default adapter inspects the current Node host and never provisions, suspends or deletes the\nuser's machine. A probe can be injected for deterministic tests or another host environment.",
       "isReadme": true,
-      "examples": [],
+      "see": [],
+      "security": [],
       "kind": "function",
       "modulePath": "src/features/local-compute/composition/createInfraAdapter.ts",
       "sourceLocation": {
@@ -198,8 +243,12 @@
         "line": 21,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["LocalComputeAdapterOptions"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "LocalComputeAdapterOptions"
+      ],
       "signatures": [
         {
           "label": "(options?: LocalComputeAdapterOptions) => InfraComputeAdapter<\"local\">",
@@ -220,9 +269,11 @@
     },
     {
       "name": "createNodeLocalHostProbe",
+      "title": null,
       "description": "Create the concrete Node host probe used by the default local compute adapter.",
       "isReadme": false,
-      "examples": [],
+      "see": [],
+      "security": [],
       "kind": "function",
       "modulePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
       "sourceLocation": {
@@ -230,8 +281,12 @@
         "line": 10,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["LocalHostProbe"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "LocalHostProbe"
+      ],
       "signatures": [
         {
           "label": "() => LocalHostProbe",
@@ -245,9 +300,11 @@
     },
     {
       "name": "infraAdapterDescriptor",
+      "title": null,
       "description": null,
       "isReadme": false,
-      "examples": [],
+      "see": [],
+      "security": [],
       "kind": "value",
       "modulePath": "src/constants/infra.ts",
       "sourceLocation": {
@@ -255,7 +312,9 @@
         "line": 5,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],
@@ -263,9 +322,11 @@
     },
     {
       "name": "LocalComputeAdapterOptions",
+      "title": null,
       "description": null,
       "isReadme": false,
-      "examples": [],
+      "see": [],
+      "security": [],
       "kind": "type",
       "modulePath": "src/types/localCompute.ts",
       "sourceLocation": {
@@ -273,8 +334,12 @@
         "line": 19,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["LocalHostProbe"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "LocalHostProbe"
+      ],
       "signatures": [],
       "members": [
         {
@@ -289,9 +354,11 @@
     },
     {
       "name": "LocalHostObservation",
+      "title": null,
       "description": null,
       "isReadme": false,
-      "examples": [],
+      "see": [],
+      "security": [],
       "kind": "type",
       "modulePath": "src/types/localCompute.ts",
       "sourceLocation": {
@@ -299,7 +366,9 @@
         "line": 3,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [
@@ -350,9 +419,11 @@
     },
     {
       "name": "LocalHostProbe",
+      "title": null,
       "description": null,
       "isReadme": false,
-      "examples": [],
+      "see": [],
+      "security": [],
       "kind": "type",
       "modulePath": "src/types/localCompute.ts",
       "sourceLocation": {
@@ -360,8 +431,12 @@
         "line": 12,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
-      "relatedSymbols": ["LocalHostObservation"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
+      "relatedSymbols": [
+        "LocalHostObservation"
+      ],
       "signatures": [],
       "members": [
         {
@@ -380,6 +455,8 @@
     {
       "name": "createNodeLocalHostProbe",
       "description": "Create the concrete Node host probe used by the default local compute adapter.",
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
         "line": 10,
@@ -389,6 +466,8 @@
     {
       "name": "inspectLocalHostAsync",
       "description": "Inspect the current process host and requested working directory.",
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
         "line": 17,
@@ -398,6 +477,8 @@
     {
       "name": "getLocalTarget",
       "description": "Map Node platform and architecture values to the portable Contracts target.",
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
         "line": 35,
@@ -407,6 +488,8 @@
     {
       "name": "canAccessAsync",
       "description": "Check one filesystem access mode without throwing host exceptions.",
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
         "line": 67,
@@ -416,6 +499,8 @@
     {
       "name": "destroyLocalComputeAsync",
       "description": "Release logical ownership without deleting or mutating the user's local host.",
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/features/local-compute/application/destroyLocalComputeAsync.ts",
         "line": 9,
@@ -425,6 +510,8 @@
     {
       "name": "ensureLocalComputeAsync",
       "description": "Return the validated current host as a portable compute target without provisioning it.",
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/features/local-compute/application/ensureLocalComputeAsync.ts",
         "line": 12,
@@ -434,6 +521,8 @@
     {
       "name": "getLocalComputeStatusAsync",
       "description": "Return current local host availability through the canonical compute status contract.",
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/features/local-compute/application/getLocalComputeStatusAsync.ts",
         "line": 11,
@@ -443,6 +532,8 @@
     {
       "name": "invalidStatusSelection",
       "description": "Reject status requests for a different compute provider.",
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/features/local-compute/application/getLocalComputeStatusAsync.ts",
         "line": 35,
@@ -452,6 +543,8 @@
     {
       "name": "inspectLocalComputeAsync",
       "description": "Validate local selection and host capabilities, returning canonical ownership.",
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/features/local-compute/application/inspectLocalComputeAsync.ts",
         "line": 16,
@@ -461,6 +554,8 @@
     {
       "name": "invalidSelection",
       "description": "Reject a local adapter invoked for a different compute selection.",
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/features/local-compute/application/inspectLocalComputeAsync.ts",
         "line": 61,
@@ -470,6 +565,8 @@
     {
       "name": "inspectLocalComputeSnapshotAsync",
       "description": "Return the existing local host as a read-only portable compute snapshot.",
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/features/local-compute/application/inspectLocalComputeSnapshotAsync.ts",
         "line": 12,
@@ -479,6 +576,8 @@
     {
       "name": "planLocalComputeAsync",
       "description": "Report the existing local host as a no-op compute target.",
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/features/local-compute/application/planLocalComputeAsync.ts",
         "line": 12,
@@ -488,6 +587,8 @@
     {
       "name": "validateLocalComputeAsync",
       "description": "Validate the selected local host without mutation.",
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/features/local-compute/application/validateLocalComputeAsync.ts",
         "line": 11,
@@ -497,6 +598,8 @@
     {
       "name": "createInfraAdapter",
       "description": "Create the canonical local-host compute adapter entrypoint.\n\nThe default adapter inspects the current Node host and never provisions, suspends or deletes the\nuser's machine. A probe can be injected for deterministic tests or another host environment.",
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/features/local-compute/composition/createInfraAdapter.ts",
         "line": 21,
@@ -506,6 +609,8 @@
     {
       "name": "createContext",
       "description": null,
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/infraAdapter.test.ts",
         "line": 88,
@@ -515,6 +620,8 @@
     {
       "name": "createDestroyRequest",
       "description": null,
+      "see": [],
+      "security": [],
       "sourceLocation": {
         "filePath": "src/infraAdapter.test.ts",
         "line": 107,

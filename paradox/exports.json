@@ -1,9 +1,11 @@
 [
   {
     "name": "createInfraAdapter",
+    "title": null,
     "description": "Create the canonical local-host compute adapter entrypoint.\n\nThe default adapter inspects the current Node host and never provisions, suspends or deletes the\nuser's machine. A probe can be injected for deterministic tests or another host environment.",
     "isReadme": true,
-    "examples": [],
+    "see": [],
+    "security": [],
     "kind": "function",
     "modulePath": "src/features/local-compute/composition/createInfraAdapter.ts",
     "sourceLocation": {
@@ -11,8 +13,12 @@
       "line": 21,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["LocalComputeAdapterOptions"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "LocalComputeAdapterOptions"
+    ],
     "signatures": [
       {
         "label": "(options?: LocalComputeAdapterOptions) => InfraComputeAdapter<\"local\">",
@@ -33,9 +39,11 @@
   },
   {
     "name": "createNodeLocalHostProbe",
+    "title": null,
     "description": "Create the concrete Node host probe used by the default local compute adapter.",
     "isReadme": false,
-    "examples": [],
+    "see": [],
+    "security": [],
     "kind": "function",
     "modulePath": "src/features/local-compute/adapters/outbound/createNodeLocalHostProbe.ts",
     "sourceLocation": {
@@ -43,8 +51,12 @@
       "line": 10,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["LocalHostProbe"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "LocalHostProbe"
+    ],
     "signatures": [
       {
         "label": "() => LocalHostProbe",
@@ -58,9 +70,11 @@
   },
   {
     "name": "infraAdapterDescriptor",
+    "title": null,
     "description": null,
     "isReadme": false,
-    "examples": [],
+    "see": [],
+    "security": [],
     "kind": "value",
     "modulePath": "src/constants/infra.ts",
     "sourceLocation": {
@@ -68,7 +82,9 @@
       "line": 5,
       "column": 14
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [],
@@ -76,9 +92,11 @@
   },
   {
     "name": "LocalComputeAdapterOptions",
+    "title": null,
     "description": null,
     "isReadme": false,
-    "examples": [],
+    "see": [],
+    "security": [],
     "kind": "type",
     "modulePath": "src/types/localCompute.ts",
     "sourceLocation": {
@@ -86,8 +104,12 @@
       "line": 19,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["LocalHostProbe"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "LocalHostProbe"
+    ],
     "signatures": [],
     "members": [
       {
@@ -102,9 +124,11 @@
   },
   {
     "name": "LocalHostObservation",
+    "title": null,
     "description": null,
     "isReadme": false,
-    "examples": [],
+    "see": [],
+    "security": [],
     "kind": "type",
     "modulePath": "src/types/localCompute.ts",
     "sourceLocation": {
@@ -112,7 +136,9 @@
       "line": 3,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
     "relatedSymbols": [],
     "signatures": [],
     "members": [
@@ -163,9 +189,11 @@
   },
   {
     "name": "LocalHostProbe",
+    "title": null,
     "description": null,
     "isReadme": false,
-    "examples": [],
+    "see": [],
+    "security": [],
     "kind": "type",
     "modulePath": "src/types/localCompute.ts",
     "sourceLocation": {
@@ -173,8 +201,12 @@
       "line": 12,
       "column": 1
     },
-    "exportPaths": ["src/index.ts"],
-    "relatedSymbols": ["LocalHostObservation"],
+    "exportPaths": [
+      "src/index.ts"
+    ],
+    "relatedSymbols": [
+      "LocalHostObservation"
+    ],
     "signatures": [],
     "members": [
       {

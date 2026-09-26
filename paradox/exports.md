@@ -44,9 +44,9 @@ Source: `src/types/localCompute.ts:19:1`
 
 ### Members
 
-| Name  | Kind     | Type                          | Required | Description |
-| ----- | -------- | ----------------------------- | -------- | ----------- |
-| probe | property | `LocalHostProbe \| undefined` | no       |             |
+| Name | Kind | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| probe | property | `LocalHostProbe \| undefined` | no |  |
 
 ## LocalHostObservation
 
@@ -56,14 +56,14 @@ Source: `src/types/localCompute.ts:3:1`
 
 ### Members
 
-| Name             | Kind     | Type                                                                                                                                                    | Required | Description |
-| ---------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------- |
-| detail           | property | `string \| undefined`                                                                                                                                   | no       |             |
-| exists           | property | `boolean`                                                                                                                                               | yes      |             |
-| readable         | property | `boolean`                                                                                                                                               | yes      |             |
-| target           | property | `{ readonly id: string; readonly os: "linux" \| "darwin" \| "windows"; readonly architecture: "amd64" \| "arm64"; } & { readonly kind: "local-host"; }` | yes      |             |
-| workingDirectory | property | `string`                                                                                                                                                | yes      |             |
-| writable         | property | `boolean`                                                                                                                                               | yes      |             |
+| Name | Kind | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| detail | property | `string \| undefined` | no |  |
+| exists | property | `boolean` | yes |  |
+| readable | property | `boolean` | yes |  |
+| target | property | `{ readonly id: string; readonly os: "linux" \| "darwin" \| "windows"; readonly architecture: "amd64" \| "arm64"; } & { readonly kind: "local-host"; }` | yes |  |
+| workingDirectory | property | `string` | yes |  |
+| writable | property | `boolean` | yes |  |
 
 ## LocalHostProbe
 
@@ -73,6 +73,6 @@ Source: `src/types/localCompute.ts:12:1`
 
 ### Members
 
-| Name         | Kind   | Type                                                                                             | Required | Description |
-| ------------ | ------ | ------------------------------------------------------------------------------------------------ | -------- | ----------- |
-| inspectAsync | method | `(workingDirectory: string, signal?: AbortSignal) => Promise<InfraResult<LocalHostObservation>>` | yes      |             |
+| Name | Kind | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| inspectAsync | method | `(workingDirectory: string, signal?: AbortSignal) => Promise<InfraResult<LocalHostObservation>>` | yes |  |
