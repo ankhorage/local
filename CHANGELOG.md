@@ -1,5 +1,11 @@
 # @ankhorage/local
 
+## 0.3.3
+
+### Patch Changes
+
+- c62f970: Update dependencies: `@ankhorage/contracts`, `@ankhorage/paradox`.
+
 ## 0.3.2
 
 ### Patch Changes
