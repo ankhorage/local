@@ -1,5 +1,11 @@
 # @ankhorage/local
 
+## 0.3.4
+
+### Patch Changes
+
+- 9ca7546: Update Renovate-managed workflows.
+
 ## 0.3.3
 
 ### Patch Changes
