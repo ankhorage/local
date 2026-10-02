@@ -1,5 +1,12 @@
 # @ankhorage/local
 
+## 0.3.5
+
+### Patch Changes
+
+- ef01532: Update dependencies: `@ankhorage/devtools`, `@types/bun`.
+- f83412e: Update dependencies: `@ankhorage/contracts`.
+
 ## 0.3.4
 
 ### Patch Changes
