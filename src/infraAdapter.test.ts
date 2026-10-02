@@ -96,7 +96,9 @@ function createContext() {
       },
     },
     credentials: {
+      findAsync: () => Promise.resolve({ ok: true as const, value: null, diagnostics: [] }),
       resolveAsync: () => Promise.resolve({ ok: true as const, value: {}, diagnostics: [] }),
+      persistAsync: () => Promise.resolve({ ok: true as const, value: null, diagnostics: [] }),
     },
     secrets: {
       resolveAsync: () => Promise.resolve({ ok: true as const, value: 'secret', diagnostics: [] }),
