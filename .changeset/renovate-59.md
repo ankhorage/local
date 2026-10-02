@@ -2,4 +2,4 @@
 '@ankhorage/local': patch
 ---
 
-Update Ankhorage dependencies: `@ankhorage/contracts`, `@ankhorage/paradox`.
+Update dependencies: `@ankhorage/contracts`, `@ankhorage/paradox`.
