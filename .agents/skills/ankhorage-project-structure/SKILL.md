@@ -53,9 +53,16 @@ Valid profiles include:
 - generated standalone application;
 - an explicitly documented repository-specific profile such as Studio.
 
-A package may start flat. Introduce `domain/`, `application/`, `ports/`, `adapters/`,
-`composition/`, `features/`, or `core/` only when those names communicate a real architectural
-role. Once a vocabulary is introduced, its combinations must be coherent:
+Implementation-owning Ankhorage packages are feature-first. Product, domain, and package
+capabilities belong below `src/features/<feature>/`; do not place feature implementation modules
+directly below `src/`. Keep only deliberate public facades and genuinely package-wide ownership
+such as `src/types/`, `src/constants/`, and `src/utils/` at the source root. Contracts-only,
+reusable UI/design-system, generated-application, and explicitly documented repository-specific
+profiles may use their dedicated taxonomy instead of inventing fake features.
+
+Inside each feature, introduce `domain/`, `application/`, `ports/`, `adapters/`, or
+`composition/` only when those names communicate a real architectural role. Do not create empty
+hexagonal layers for symmetry. Once a vocabulary is introduced, its combinations must be coherent:
 
 - `domain/` may stand alone and must remain independent from outer mechanisms;
 - `application/` coordinates use cases and may depend inward on domain policy and required ports;
@@ -82,8 +89,12 @@ Repository-root `examples/` contains complete user-facing examples. Each example
 subdirectory. Test-only fixtures remain test-owned.
 
 Package-level delivery edges such as `src/cli/`, `src/host/`, `src/app/`, or `src/platform/`
-remain thin adapters/composition boundaries. The filesystem below `src/cli/commands/` mirrors the
-public Ankh command path, and command modules parse input, invoke package behavior, and render output.
+remain thin adapters/composition boundaries outside feature ownership. Every public Ankh command
+implementation must live below `src/cli/commands/`, and that filesystem mirrors the public command
+path after the package prefix. For example, `ankh rules config validate` maps to
+`src/cli/commands/config/validate.ts`. CLI provider/index modules register and compose commands;
+they must not contain the command's application or domain behavior. Command modules parse input,
+invoke the owning feature boundary, and render output.
 
 Keep only deliberate public facades directly under `src/`. Public package subpaths must map to
 explicit package exports; generic barrels are not an excuse to bypass ownership.
@@ -163,7 +174,13 @@ belong together in `ankhorage/navigator/src/constants/navigator.ts`.
 `utils/` is the only utility directory name. Do not create `shared/`, `helper/`, `helpers/`,
 `common/`, or equivalent catch-all folders. It is not a destination for every pure function or type.
 
-Apply **reuse before implementation** and **shared by default** before choosing a local owner. For
+Apply **reuse before implementation** and **shared by default** before choosing a local owner.
+
+Treat the **second equivalent generic implementation as the duplication threshold**. When the same
+general-purpose regex, parser pattern, formatter, validator, algorithm, or static policy appears in
+two places, stop copying it and resolve its canonical shared owner. For runtime-neutral reusable
+behavior or patterns, inspect and extend `@ankhorage/utility` first. Do not wait for a third copy,
+and do not create repo-local aliases around the shared implementation. For
 every function that could reasonably be reused across repositories, you MUST first inspect the
 published `@ankhorage/utility` public API and its owning topic. Reuse the existing export when its
 semantics match. If the function is missing and is generic without product, manifest, or framework
