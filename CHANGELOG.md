@@ -1,5 +1,12 @@
 # @ankhorage/local
 
+## 0.3.6
+
+### Patch Changes
+
+- 7049cf9: Update Renovate-managed workflows.
+- 79249d4: Update dependencies: `@ankhorage/contracts`, `@ankhorage/paradox`.
+
 ## 0.3.5
 
 ### Patch Changes
