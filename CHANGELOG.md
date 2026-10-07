@@ -1,5 +1,11 @@
 # @ankhorage/local
 
+## 0.3.15
+
+### Patch Changes
+
+- ffcb45c: Update dependencies: `@ankhorage/contracts`.
+
 ## 0.3.14
 
 ### Patch Changes
